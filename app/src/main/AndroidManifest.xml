@@ -13,10 +13,6 @@
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login"></activity>
 
-        <meta-data
-            android:name="com.google.android.actions"
-            android:resource="@xml/Login" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
