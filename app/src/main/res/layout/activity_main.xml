@@ -10,7 +10,13 @@
         android:id="@+id/imageView"
         android:layout_width="284dp"
         android:layout_height="456dp"
-        app:srcCompat="@drawable/Logo_US"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="164dp" />
+        android:layout_gravity="center"
+        android:layout_marginBottom="116dp"
+        android:contentDescription="@+string/desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76"
+        app:srcCompat="@drawable/logous" />
 </androidx.constraintlayout.widget.ConstraintLayout>
