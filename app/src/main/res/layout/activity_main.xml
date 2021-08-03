@@ -10,7 +10,10 @@
         android:id="@+id/imageView"
         android:layout_width="284dp"
         android:layout_height="456dp"
-        app:srcCompat="@drawable/logous"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="164dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logous" />
 </androidx.constraintlayout.widget.ConstraintLayout>

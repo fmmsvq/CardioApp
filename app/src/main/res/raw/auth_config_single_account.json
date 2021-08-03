@@ -1,0 +1,14 @@
+{
+  "client_id" : "61a5aa45-ffbf-45f2-9b98-398838f3afb5",
+  "authorization_user_agent" : "DEFAULT",
+  "redirect_uri" : "msauth://com.example.cardioapp/TmkM%2FGS6oCKoncROVk5zbO8qMHU%3D",
+  "authorities" : [
+    {
+      "type": "AAD",
+      "audience": {
+      "type": "AzureADandPersonalMicrosoftAccount",
+          "tenant_id": "common"
+        }
+      }
+  ]
+}

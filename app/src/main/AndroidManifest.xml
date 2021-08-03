@@ -4,20 +4,35 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CardioApp">
+        <activity android:name=".SignInActivity"></activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/activity_login"/>
-
+            android:label="@string/activity_login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Intent filter to capture System Browser or Authenticator calling back to our app after sign-in -->
+        <activity android:name="com.microsoft.identity.client.BrowserTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:exported="true"
+                    android:host="auth"
+                    android:path="/msauth://com.example.cardioapp/dabcb0bf-8d77-4e8b-8307-9cbeb3833eab"
+                    android:scheme="com.example.cardioapp" />
             </intent-filter>
         </activity>
     </application>
