@@ -3,6 +3,7 @@ package com.example.cardioapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,11 +17,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Arranca la siguiente actvidad pasados unos segundos
-        final Handler handler = new Handler();
-        handler.postDelayed(() -> {
-            Intent mInHome = new Intent(MainActivity.this, LoginActivity.class);
-            MainActivity.this.startActivity(mInHome);
-            MainActivity.this.finish();
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+        Intent mInHome = new Intent(MainActivity.this, LoginActivity.class);
+        MainActivity.this.startActivity(mInHome);
+        MainActivity.this.finish();
         }, 3000);
     }
 }

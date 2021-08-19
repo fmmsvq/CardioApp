@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
 }
-android {/*
+android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
@@ -14,6 +14,7 @@ android {/*
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         missingDimensionStrategy 'react-native-camera', 'general'
+
     }
 
     buildTypes {
@@ -21,14 +22,12 @@ android {/*
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }*/
-// TV Input Framework
-    /*implementation('com.google.android.libraries.tv:companionlibrary:0.2') {
-        exclude group: "com.google.ads.interactivemedia.v3"
-        exclude group: "com.google.android.gms"
-        exclude group: "com.android.support"
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+/**/
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/NOTICE'
@@ -41,30 +40,37 @@ android {/*
         exclude 'META-INF/AL2.0'
         exclude 'META-INF/LGPL2.1'
         exclude 'META-INF/io.netty.versions.properties'
-    }*/
+    }
 }
 
 dependencies {
 
-    /*implementation 'androidx.appcompat:appcompat:1.3.1'
+// TV Input Framework
+    implementation('com.google.android.libraries.tv:companionlibrary:0.2') {
+        exclude group: "com.google.ads.interactivemedia.v3"
+        exclude group: "com.google.android.gms"
+        exclude group: "com.android.support"
+    }
+
+    implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.annotation:annotation:1.2.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.microsoft.identity.client:msal:2.1.0'
     // Include the sdk as a dependency
     implementation 'com.microsoft.graph:microsoft-graph:4.1.0'
     // Include Azure identity for authentication
     implementation 'com.azure:azure-identity:1.3.4'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'*/
-}/*
-apply plugin: 'com.android.application'*/
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
+apply plugin: 'com.android.application'
 
-allprojects {/*
+allprojects {
     repositories {
         mavenCentral()
         google()
@@ -79,5 +85,10 @@ allprojects {/*
                 password System.getenv("ENV_VSTS_MVN_ANDROIDADAL_ACCESSTOKEN") != null ? System.getenv("ENV_VSTS_MVN_ANDROIDADAL_ACCESSTOKEN") : project.findProperty("vstsMavenAccessToken")
             }
         }
-    }*/
+        gradle.projectsEvaluated {
+            tasks.withType(JavaCompile) {
+                options.compilerArgs << "-Xlint:deprecation"
+            }
+        }
+    }
 }

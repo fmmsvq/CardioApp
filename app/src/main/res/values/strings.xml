@@ -10,4 +10,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="activity_login">activity_login</string>
+    <string name="principal">Principal</string>
+    <string name="menu">Menú</string>
+    <string name="actualizar">Actualizar</string>
 </resources>
