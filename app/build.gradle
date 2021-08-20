@@ -47,6 +47,7 @@ android {
 }
 
 dependencies {
+    def nav_version = "2.3.5"
 
 // TV Input Framework
     implementation('com.google.android.libraries.tv:companionlibrary:0.2') {
@@ -56,20 +57,28 @@ dependencies {
     }
 
     implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'androidx.annotation:annotation:1.2.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.google.android.material:material:1.4.0'
     implementation 'com.microsoft.identity.client:msal:2.1.0'
     // Include the sdk as a dependency
     implementation 'com.microsoft.graph:microsoft-graph:4.1.0'
     // Include Azure identity for authentication
     implementation 'com.azure:azure-identity:1.3.4'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //Rounded image view
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }
 apply plugin: 'com.android.application'
 

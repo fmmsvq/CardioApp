@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/perfil">
+        <menu>
+            <item
+                android:id="@+id/perfilMedico"
+                android:icon="@drawable/fotoMedico"
+                android:title="@string/@nombreMedico" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/principal"
+        android:icon="@drawable/principal"
+        android:title="@string/Principal" />
+    <item
+        android:id="@+id/pacientes"
+        android:icon="@drawable/pacientes"
+        android:title="@string/Pacientes" />
+    <item
+        android:id="@+id/config"
+        android:icon="@drawable/config"
+        android:title="@string/Configuracion" />
+    <item
+        android:id="@+id/notif"
+        android:icon="@drawable/notificaciones"
+        android:title="@string/Notificaciones"/>
+
+</menu>

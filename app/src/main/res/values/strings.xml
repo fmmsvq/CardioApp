@@ -24,4 +24,8 @@
     <string name="estad_stica_de_pacientes_por_encima_de_punto_cr_tico">Estadística de pacientes por encima de punto crítico</string>
     <string name="n_total_de_pacientes">Nº total de pacientes</string>
     <string name="pacientes_punto_critico">Estadistica de pacientes por encima de punto crítico</string>
+    <string name="Pacientes">Pacientes</string>
+    <string name="Principal">Principal</string>
+    <string name="Notificaciones">Notificaciones</string>
+    <string name="Configuracion">Configuracion</string>
 </resources>
