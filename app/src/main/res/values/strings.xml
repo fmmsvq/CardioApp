@@ -17,4 +17,11 @@
     <string name="pass2">pass2</string>
     <string name="password2">Password2</string>
     <string name="password1">Password1</string>
+    <string name="notificaciones_sin_revisar">Notificaciones sin revisar</string>
+    <string name="nuevos_pacientes">Nuevos pacientes</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="alertas">Alertas</string>
+    <string name="estad_stica_de_pacientes_por_encima_de_punto_cr_tico">Estadística de pacientes por encima de punto crítico</string>
+    <string name="n_total_de_pacientes">Nº total de pacientes</string>
+    <string name="pacientes_punto_critico">Estadistica de pacientes por encima de punto crítico</string>
 </resources>
