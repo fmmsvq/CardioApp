@@ -8,11 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {//implements View.OnClickListener {
 
-    Button btnSignin = findViewById(R.id.signin);//SIGN IN
-    Button btnLogin = findViewById(R.id.login);
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Button btnLogin = findViewById(R.id.login);
+
+        Button btnSignin = findViewById(R.id.signin);//SIGN IN
+
         //Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 
         //Abrimos Actividad de SignIn pulsando el boton de SignIn
@@ -20,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {//implements View.OnClickL
             Intent i = new Intent(LoginActivity.this, SignInActivity.class);
             startActivity(i);
         });
-        //Abrimos Actividad de LogIn pulsando el boton de LogIn
+        //Abrimos Actividad de Principal pulsando el boton de LogIn
         btnLogin.setOnClickListener(v -> {
             Intent i = new Intent(LoginActivity.this, PrincipalActivity.class);
             startActivity(i);

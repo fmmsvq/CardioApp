@@ -3,11 +3,41 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/FATIMA/AppData/Local/Android/Sdk/platforms/android-30/data/res/drawable/ic_menu_refresh.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable-nokeys/contenedor_redondeado.xml" value="0.17685185185185184" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/ab_share_pack_material.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/ab_solid_shadow_material.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/activated_background.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/activated_background_holo_dark.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/activated_background_holo_light.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/activated_background_light.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/activated_background_material.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/app_icon_background.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/autofill_dataset_picker_background.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/autofilled_highlight.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/background_cache_hint_selector_holo_light.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/baseline_menu_18.xml" value="0.175" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/baseline_menu_24.xml" value="0.175" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/baseline_menu_36.xml" value="0.175" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/btn_browser_zoom_fit_page.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/btn_check_holo_light.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/btn_close.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/btn_default_holo_dark.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/btn_default_material.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/btn_toggle_bg.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/chooser_direct_share_icon_placeholder.xml" value="0.1203125" />
         <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/frame.xml" value="0.2703125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/ic_laucher.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/ic_launcher_foregound.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/ic_menu_refresh.xml" value="0.1203125" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/drawable/ic_refresh.xml" value="0.1203125" />
         <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/layout/activity_login.xml" value="0.4" />
         <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/layout/activity_main.xml" value="0.13125" />
-        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/layout/activity_principal.xml" value="0.4" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/layout/activity_principal.xml" value="0.264" />
         <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/layout/activity_signin.xml" value="0.2513586956521739" />
+        <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1203125" />
         <entry key="..\:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
       </map>
     </option>
