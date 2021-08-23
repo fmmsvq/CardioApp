@@ -28,4 +28,6 @@
     <string name="Principal">Principal</string>
     <string name="Notificaciones">Notificaciones</string>
     <string name="Configuracion">Configuracion</string>
+    <string name="Medico">Medico</string>
+    <string name="maria_del_pozo_gomez">Maria del Pozo Gomez</string>
 </resources>
