@@ -71,6 +71,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_search"
         app:tint="@color/browser_actions_title_color"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="android.support.v7.widget.SearchView"
         tools:ignore="NotSibling" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>

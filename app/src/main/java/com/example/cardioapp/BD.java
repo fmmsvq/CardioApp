@@ -1,11 +1,8 @@
 package com.example.cardioapp;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteCursorDriver;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteQuery;
-import android.content.Context;
 
 public class BD extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "medico";
