@@ -7,19 +7,33 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 
-public class PrincipalActivity extends AppCompatActivity {
+public class PrincipalActivity extends AppCompatActivity{
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-    // Menu lateral
+     // Menu lateral
         final DrawerLayout drawerLayout = findViewById(R.id.drawerlayout);
         findViewById(R.id.btnmenu).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
 
-        // Base de Datos
+    // Base de Datos
+        crearBD();
+
+    // Click Contenedor 4
+        findViewById(R.id.contenedor1).setClickable(true);
+        findViewById(R.id.contenedor2).setClickable(true);
+        findViewById(R.id.contenedor3).setClickable(true);
+        findViewById(R.id.contenedor4).setClickable(true);
+
+    }
+
+    private void crearBD(){
         BD bd = new BD(this);
         SQLiteDatabase db = bd.getWritableDatabase();
         if (db != null) {
@@ -39,5 +53,9 @@ public class PrincipalActivity extends AppCompatActivity {
             valores.put("Paciente","Pedro Macías Ibáñez");
             //valores.put("","");
         }
+    }
+
+    public void onClick(View view) {
+        setContentView(R.layout.activity_lista_pacientes);
     }
 }
