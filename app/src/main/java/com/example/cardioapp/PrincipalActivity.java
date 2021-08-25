@@ -5,9 +5,12 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class PrincipalActivity extends AppCompatActivity{
 
@@ -21,11 +24,12 @@ public class PrincipalActivity extends AppCompatActivity{
      // Menu lateral
         final DrawerLayout drawerLayout = findViewById(R.id.drawerlayout);
         findViewById(R.id.btnmenu).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
-
+        NavigationView navigationView = findViewById(R.id.menu);
+        navigationView.setItemIconTintList(null);
     // Base de Datos
         crearBD();
 
-    // Click Contenedor 4
+    // Click Contenedores para abrir ListaPacientes
         findViewById(R.id.contenedor1).setClickable(true);
         findViewById(R.id.contenedor2).setClickable(true);
         findViewById(R.id.contenedor3).setClickable(true);
@@ -56,6 +60,8 @@ public class PrincipalActivity extends AppCompatActivity{
     }
 
     public void onClick(View view) {
-        setContentView(R.layout.activity_lista_pacientes);
+        //setContentView(R.layout.activity_lista_pacientes);
+        Intent i = new Intent(PrincipalActivity.this, ListaPacientes.class);
+        startActivity(i);
     }
 }

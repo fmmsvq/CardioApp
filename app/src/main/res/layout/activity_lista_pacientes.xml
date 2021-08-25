@@ -8,17 +8,18 @@
     android:layout_height="match_parent"
     tools:context="ListaPacientes">
 
-
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/menu_top"
       android:layout_width="match_parent"
       android:layout_height="?actionBarSize">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/titulo_listapacientes"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="21dp"
         android:fontFamily="monospace"
         android:minWidth="48dp"
         android:minHeight="48dp"
@@ -28,62 +29,73 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/l_listapacientes"
         app:layout_constraintEnd_toStartOf="@+id/btnsearch"
         app:layout_constraintStart_toEndOf="@+id/btnmenu2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.04"
+        tools:ignore="NotSibling" />
 
     <ImageButton
         android:id="@+id/btnmenu2"
-        style="@android:style/Widget.Holo.Light.ImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
         android:backgroundTint="@color/white"
+        android:clickable="true"
         android:contentDescription="@string/menu"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@id/l_listapacientes"
+        app:layout_constraintEnd_toStartOf="@+id/titulo_listapacientes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036"
         app:srcCompat="@drawable/baseline_menu_black_36"
-        app:tint="@color/browser_actions_title_color" />
+        app:tint="@color/browser_actions_title_color"
+        tools:ignore="NotSibling" />
 
     <ImageButton
         android:id="@+id/btnsearch"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="@color/white"
         android:contentDescription="@string/actualizar"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/l_listapacientes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/titulo_listapacientes"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.029"
         app:srcCompat="@drawable/ic_search"
-        app:tint="@color/browser_actions_title_color" />
+        app:tint="@color/browser_actions_title_color"
+        tools:ignore="NotSibling" />
 
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/l_listapacientes">
 
     <ListView
+        android:id="@+id/listapacientes"
         android:layout_width="414dp"
         android:layout_height="641dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
   </androidx.constraintlayout.widget.ConstraintLayout>
 
   <com.google.android.material.navigation.NavigationView
-      android:id="@+id/menu"
+      android:id="@+id/menu2"
       android:layout_width="wrap_content"
       android:layout_height="match_parent"
       android:layout_gravity="start"

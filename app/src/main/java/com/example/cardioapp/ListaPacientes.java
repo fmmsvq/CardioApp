@@ -1,16 +1,15 @@
 package com.example.cardioapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
-import android.view.Menu;
+
+
+import com.google.android.material.navigation.NavigationView;
 
 public class ListaPacientes extends AppCompatActivity {
-
-    private Toolbar menuTop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +18,8 @@ public class ListaPacientes extends AppCompatActivity {
 
         final DrawerLayout drawerLayout = findViewById(R.id.drawerlayout2);
         findViewById(R.id.btnmenu2).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
-
+        NavigationView navigationView = findViewById(R.id.menu2);
+        navigationView.setItemIconTintList(null);
     }
 
 
