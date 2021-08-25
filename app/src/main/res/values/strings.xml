@@ -30,4 +30,8 @@
     <string name="Configuracion">Configuracion</string>
     <string name="Medico">Medico</string>
     <string name="maria_del_pozo_gomez">Maria del Pozo Gomez</string>
+    <string name="Alertas">Alertas</string>
+    <string name="search">Search</string>
+    <string name="lista_de_pacientes">Lista de Pacientes</string>
+
 </resources>

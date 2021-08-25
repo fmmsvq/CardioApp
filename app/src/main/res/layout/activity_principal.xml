@@ -71,20 +71,26 @@
             android:layout_marginBottom="3dp"
             android:background="@drawable/contenedor_redondeado"
             android:textAlignment="center"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:focusable="true"
+            android:onClick="onClick"
             app:layout_constraintBottom_toTopOf="@+id/contenedor3"
             app:layout_constraintEnd_toStartOf="@+id/contenedor2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="OnClick">
 
             <TextView
                 android:id="@+id/NotificacionesSinRevisar"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:autofillHints="username"
                 android:ems="10"
                 android:labelFor="@id/NotificacionesSinRevisar"
                 android:text="@string/notificaciones_sin_revisar"
                 android:textAlignment="center" />
+
         </com.google.android.material.navigation.NavigationView>
 
         <com.google.android.material.navigation.NavigationView
@@ -96,10 +102,15 @@
             android:layout_marginBottom="3dp"
             android:background="@drawable/contenedor_redondeado"
             android:textAlignment="center"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:focusable="true"
+            android:onClick="onClick"
             app:layout_constraintBottom_toTopOf="@+id/contenedor5"
             app:layout_constraintEnd_toStartOf="@+id/contenedor4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contenedor1">
+            app:layout_constraintTop_toBottomOf="@+id/contenedor1"
+           >
 
             <TextView
                 android:id="@+id/nuevos_pacientes"
@@ -108,7 +119,6 @@
                 android:autofillHints="username"
                 android:ems="10"
                 android:labelFor="@+id/nuevos_pacientes"
-                android:minHeight="48dp"
                 android:text="@string/nuevos_pacientes"
                 android:textAlignment="center" />
         </com.google.android.material.navigation.NavigationView>
@@ -117,37 +127,62 @@
             android:id="@+id/contenedor5"
             android:layout_width="380dp"
             android:layout_height="155dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginEnd="7dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="25dp"
             android:background="@drawable/contenedor_redondeado"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintVertical_bias="1.0"
+            >
 
-            <TextView
-                android:id="@+id/alertas"
-                android:layout_width="373dp"
-                android:layout_height="wrap_content"
-                android:autofillHints="username"
-                android:ems="10"
-                android:labelFor="@+id/alertas"
-                android:minHeight="48dp"
-                android:text="@string/alertas"
-                android:textAlignment="center" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true">
 
-            <TextView
-                android:id="@+id/notificaciones"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:labelFor="@string/notificaciones"
-                android:minHeight="48dp"
-                android:text="@string/notificaciones"
-                android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/alertas"
+                    android:layout_width="154dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/notificaciones"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:shadowColor="@color/white"
+                    android:text="@string/alertas"
+                    android:textColor="#757575"
+                    android:clickable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:focusable="true"
+                    android:onClick="onClick"/>
 
+                <TextView
+                    android:id="@+id/notificaciones"
+                    android:layout_width="154dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:labelFor="@string/notificaciones"
+                    android:shadowColor="@color/white"
+                    android:text="@string/Notificaciones"
+                    android:textAlignment="center"
+                    android:textColor="#757575"
+                    android:clickable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:focusable="true"
+                    android:onClick="onClick"/>
+            </RelativeLayout>
         </com.google.android.material.navigation.NavigationView>
 
         <com.google.android.material.navigation.NavigationView
@@ -160,6 +195,10 @@
             android:layout_marginBottom="3dp"
             android:background="@drawable/contenedor_redondeado"
             android:textAlignment="center"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:focusable="true"
+            android:onClick="onClick"
             app:layout_constraintBottom_toTopOf="@+id/contenedor4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -186,6 +225,8 @@
             android:layout_marginBottom="3dp"
             android:background="@drawable/contenedor_redondeado"
             android:textAlignment="center"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
             app:layout_constraintBottom_toTopOf="@+id/contenedor5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/contenedor3"
@@ -206,10 +247,11 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/menu"
-        app:menu="@menu/menu_lateral"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start">
+        android:layout_gravity="start"
+        app:menu="@menu/menu_lateral"
+        app:headerLayout="@layout/cabecera_menu_lateral">
     </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

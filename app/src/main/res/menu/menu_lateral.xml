@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/perfil"
-        android:title="@string/Medico">
-        <menu>
-            <item
-                android:id="@+id/perfilMedico"
-                android:icon="@drawable/profile"
-                android:title="@string/maria_del_pozo_gomez" />
-        </menu>
-    </item>
-
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/principal"
         android:icon="@drawable/principal"
-        android:title="@string/Principal" />
+        android:title="@string/Principal"/>
     <item
         android:id="@+id/pacientes"
         android:icon="@drawable/pacientes"
