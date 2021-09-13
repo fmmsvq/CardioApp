@@ -33,8 +33,8 @@
     <string name="Alertas">Alertas</string>
     <string name="search">Search</string>
     <string name="lista_de_pacientes">Lista de Pacientes</string>
-    <string name="search">Search</string>
     <string name="cardioapp">CardioApp</string>
     <string name="busqueda">Búsqueda</string>
+    <string name="Paciente">Paciente</string>
 
 </resources>

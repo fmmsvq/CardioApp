@@ -61,7 +61,7 @@ public class PrincipalActivity extends AppCompatActivity{
 
     public void onClick(View view) {
         //setContentView(R.layout.activity_lista_pacientes);
-        Intent i = new Intent(PrincipalActivity.this, ListaPacientes.class);
+        Intent i = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
         startActivity(i);
     }
 }

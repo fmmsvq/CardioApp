@@ -9,7 +9,7 @@ import android.os.Bundle;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class ListaPacientes extends AppCompatActivity {
+public class ListaPacientesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,7 +6,7 @@
     android:id="@+id/drawerlayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ListaPacientes">
+    tools:context=".ListaPacientesActivity">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/menu_top"
@@ -75,6 +75,12 @@
         app:actionViewClass="android.support.v7.widget.SearchView"
         tools:ignore="NotSibling" />
 
+    <ListView
+        android:id="@+id/listapacientes"
+        android:layout_width="414dp"
+        android:layout_height="641dp"
+        tools:layout_editor_absoluteY="91dp" />
+
   </androidx.constraintlayout.widget.ConstraintLayout>
 
   <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,18 +88,6 @@
       android:layout_height="wrap_content"
       android:id="@+id/l_listapacientes">
 
-    <ListView
-        android:id="@+id/listapacientes"
-        android:layout_width="414dp"
-        android:layout_height="641dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
   </androidx.constraintlayout.widget.ConstraintLayout>
 
   <com.google.android.material.navigation.NavigationView

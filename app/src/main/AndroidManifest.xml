@@ -11,24 +11,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CardioApp">
         <activity
+            android:name=".VistaPacienteActivity"
+            android:exported="true" />
+        <activity
             android:name=".SearchActivity"
             android:exported="true">
-            <meta-data android:name="android.app.searchable"
+            <meta-data
+                android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
+
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-        </activity>
-
-        <!-- Esta actividad acciona el dialogo de busqueda para iniciar busquedas en la actividad SearchActivity -->
+        </activity> <!-- Esta actividad acciona el dialogo de busqueda para iniciar busquedas en la actividad SearchActivity -->
         <activity
-            android:name=".ListaPacientes"
-            android:exported="true" >
+            android:name=".ListaPacientesActivity"
+            android:exported="true">
+
             <!-- enable the search dialog to send searches to SearchableActivity -->
-            <meta-data android:name="android.app.default_searchable"
+            <meta-data
+                android:name="android.app.default_searchable"
                 android:value=".SearchableActivity" />
         </activity>
-
         <activity
             android:name=".PrincipalActivity"
             android:exported="true" />
@@ -36,7 +40,8 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/activity_login" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +49,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- Intent filter to capture System Browser or Authenticator calling back to our app after sign-in -->
-        <activity android:name="com.microsoft.identity.client.BrowserTabActivity"
+        <activity
+            android:name="com.microsoft.identity.client.BrowserTabActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -59,7 +65,6 @@
                     android:scheme="com.example.cardioapp" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
