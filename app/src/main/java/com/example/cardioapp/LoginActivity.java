@@ -11,10 +11,8 @@ public class LoginActivity extends AppCompatActivity {//implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Button btnLogin = findViewById(R.id.login);
-
         Button btnSignin = findViewById(R.id.signin);//SIGN IN
-
+        Button btnLogin = findViewById(R.id.login);
         //Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 
         //Abrimos Actividad de SignIn pulsando el boton de SignIn

@@ -4,16 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Notification;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class PrincipalActivity extends AppCompatActivity{
-
+public class PrincipalActivity extends AppCompatActivity {
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +26,11 @@ public class PrincipalActivity extends AppCompatActivity{
         setContentView(R.layout.activity_principal);
 
      // Menu lateral
-        final DrawerLayout drawerLayout = findViewById(R.id.drawerlayout);
+        drawerLayout = findViewById(R.id.drawerlayout);
         findViewById(R.id.btnmenu).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
         NavigationView navigationView = findViewById(R.id.menu);
-        navigationView.setItemIconTintList(null);
+        //navigationView.setItemIconTintList(null);
+
     // Base de Datos
         crearBD();
 
@@ -35,7 +40,17 @@ public class PrincipalActivity extends AppCompatActivity{
         findViewById(R.id.contenedor3).setClickable(true);
         findViewById(R.id.contenedor4).setClickable(true);
 
+
     }
+/**Cierre del menú con la pulsación del botón Atrás o back de Android.**/
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 
     private void crearBD(){
         BD bd = new BD(this);
@@ -60,8 +75,35 @@ public class PrincipalActivity extends AppCompatActivity{
     }
 
     public void onClick(View view) {
-        //setContentView(R.layout.activity_lista_pacientes);
-        Intent i = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
-        startActivity(i);
+        Intent intent = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
+        startActivity(intent);
     }
+/*
+    public void onClickListaPacientes(View view){
+        Intent intent = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickNotificaciones(View view){
+        Intent intent = new Intent(PrincipalActivity.this, NotificacionesActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickConfiguracion(View view) {
+        Intent intent = new Intent(PrincipalActivity.this, ConfiguracionActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickAyuda(View view) {
+
+    }
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            selectItem(position);
+        }
+
+    }*/
+
 }

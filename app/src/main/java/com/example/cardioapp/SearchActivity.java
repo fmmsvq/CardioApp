@@ -1,19 +1,16 @@
 package com.example.cardioapp;
 
 
-import android.app.ListActivity;
+
+import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 
-public class SearchActivity extends ListActivity {
+public class SearchActivity extends Activity {
 
-    public SearchActivity (){
-        super();
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

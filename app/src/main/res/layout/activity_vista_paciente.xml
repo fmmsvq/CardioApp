@@ -16,14 +16,15 @@
             style="@android:style/Widget.Holo.Light.ImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="186dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/white"
             android:contentDescription="@string/menu"
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:translationZ="90dp"
-            app:layout_constraintBottom_toTopOf="@+id/navigationView"
+            app:layout_constraintBottom_toTopOf="@+id/contenedor1"
             app:layout_constraintEnd_toStartOf="@+id/btnrefresh"
             app:layout_constraintHorizontal_bias="0.053"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,11 +37,12 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="7dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/white"
             android:contentDescription="@string/actualizar"
             android:translationZ="90dp"
-            app:layout_constraintBottom_toTopOf="@+id/contenedor2"
+            app:layout_constraintBottom_toTopOf="@+id/contenedor1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.931"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +54,7 @@
             android:id="@+id/textView"
             android:layout_width="116dp"
             android:layout_height="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="22dp"
             android:layout_marginBottom="22dp"
             android:fontFamily="monospace"
             android:text="@string/Paciente"
@@ -61,37 +63,26 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:translationZ="90dp"
-            app:layout_constraintBottom_toTopOf="@+id/contenedor2"
+            app:layout_constraintBottom_toTopOf="@+id/contenedor1"
             app:layout_constraintEnd_toStartOf="@+id/btnrefresh"
             app:layout_constraintHorizontal_bias="0.528"
             app:layout_constraintStart_toEndOf="@+id/btnmenu"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigationView"
+            android:id="@+id/contenedor1"
             android:layout_width="400dp"
-            android:layout_height="280dp"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/contenedor_redondeado"
-            app:layout_constraintBottom_toTopOf="@+id/navigationView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints" />
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigationView3"
-            android:layout_width="400dp"
-            android:layout_height="280dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="161dp"
             android:background="@drawable/contenedor_redondeado"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/navigationView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="6dp"
+            tools:layout_editor_absoluteY="82dp">
+
+        </com.google.android.material.navigation.NavigationView>
 
         <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigationView2"
+            android:id="@+id/contenedor3"
             android:layout_width="399dp"
             android:layout_height="195dp"
             android:background="@drawable/contenedor_redondeado"
@@ -100,12 +91,26 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
 
-        <androidx.constraintlayout.widget.Group
-            android:id="@+id/group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/contenedor2"
+            android:layout_width="400dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/contenedor_redondeado"
+            app:layout_constraintBottom_toTopOf="@+id/contenedor3"
+            app:layout_constraintTop_toBottomOf="@+id/contenedor1"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="3dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_lateral"
+        app:headerLayout="@layout/cabecera_menu_lateral">
+    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

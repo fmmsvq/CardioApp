@@ -72,14 +72,12 @@
             android:background="@drawable/contenedor_redondeado"
             android:textAlignment="center"
             android:clickable="true"
-            android:foreground="?attr/selectableItemBackground"
             android:focusable="true"
-            android:onClick="onClick"
             app:layout_constraintBottom_toTopOf="@+id/contenedor3"
             app:layout_constraintEnd_toStartOf="@+id/contenedor2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="OnClick">
+            >
 
             <TextView
                 android:id="@+id/NotificacionesSinRevisar"
@@ -89,8 +87,40 @@
                 android:ems="10"
                 android:labelFor="@id/NotificacionesSinRevisar"
                 android:text="@string/notificaciones_sin_revisar"
+                android:background="?attr/selectableItemBackground"
                 android:textAlignment="center" />
 
+        </com.google.android.material.navigation.NavigationView>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/contenedor2"
+            android:layout_width="188dp"
+            android:layout_height="260dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="3dp"
+            android:textAlignment="center"
+            android:clickable="true"
+            android:background="@drawable/contenedor_redondeado"
+            android:focusable="true"
+            app:layout_constraintBottom_toTopOf="@+id/contenedor4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/contenedor1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/pacientes_punto_critico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:ems="10"
+                android:labelFor="@+id/pacientes_punto_critico"
+                android:text="@string/pacientes_punto_critico"
+                android:background="?attr/selectableItemBackground"
+
+                android:textAlignment="center" />
         </com.google.android.material.navigation.NavigationView>
 
         <com.google.android.material.navigation.NavigationView
@@ -105,12 +135,11 @@
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"
             android:focusable="true"
-            android:onClick="onClick"
             app:layout_constraintBottom_toTopOf="@+id/contenedor5"
             app:layout_constraintEnd_toStartOf="@+id/contenedor4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contenedor1"
-           >
+            >
 
             <TextView
                 android:id="@+id/nuevos_pacientes"
@@ -120,7 +149,41 @@
                 android:ems="10"
                 android:labelFor="@+id/nuevos_pacientes"
                 android:text="@string/nuevos_pacientes"
+                android:background="?attr/selectableItemBackground"
                 android:textAlignment="center" />
+        </com.google.android.material.navigation.NavigationView>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/contenedor4"
+            android:layout_width="188dp"
+            android:layout_height="165dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="3dp"
+            android:background="@drawable/contenedor_redondeado"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/contenedor5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/contenedor3"
+            app:layout_constraintTop_toBottomOf="@+id/contenedor2">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true">
+            <TextView
+                android:id="@+id/n_total_de_pacientes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:ems="10"
+                android:labelFor="@+id/n_total_de_pacientes"
+                android:text="@string/n_total_de_pacientes"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:textAlignment="center" />
+            </RelativeLayout>
+
         </com.google.android.material.navigation.NavigationView>
 
         <com.google.android.material.navigation.NavigationView
@@ -184,65 +247,6 @@
                     android:onClick="onClick"/>
             </RelativeLayout>
         </com.google.android.material.navigation.NavigationView>
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/contenedor2"
-            android:layout_width="188dp"
-            android:layout_height="260dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="3dp"
-            android:background="@drawable/contenedor_redondeado"
-            android:textAlignment="center"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground"
-            android:focusable="true"
-            android:onClick="onClick"
-            app:layout_constraintBottom_toTopOf="@+id/contenedor4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/contenedor1"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/pacientes_punto_critico"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints="username"
-                android:ems="10"
-                android:labelFor="@+id/pacientes_punto_critico"
-                android:text="@string/pacientes_punto_critico"
-                android:textAlignment="center" />
-        </com.google.android.material.navigation.NavigationView>
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/contenedor4"
-            android:layout_width="188dp"
-            android:layout_height="165dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="3dp"
-            android:background="@drawable/contenedor_redondeado"
-            android:textAlignment="center"
-            android:foreground="?attr/selectableItemBackground"
-            android:clickable="true"
-            app:layout_constraintBottom_toTopOf="@+id/contenedor5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/contenedor3"
-            app:layout_constraintTop_toBottomOf="@+id/contenedor2">
-
-            <TextView
-                android:id="@+id/n_total_de_pacientes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints="username"
-                android:ems="10"
-                android:labelFor="@+id/n_total_de_pacientes"
-                android:text="@string/n_total_de_pacientes"
-                android:textAlignment="center" />
-        </com.google.android.material.navigation.NavigationView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
