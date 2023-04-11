@@ -9,7 +9,8 @@
     <item
         android:id="@+id/menu_pacientes"
         android:icon="@drawable/pacientes"
-        android:title="@string/Pacientes" />
+        android:title="@string/Pacientes"
+        />
     <item
         android:id="@+id/menu_config"
         android:icon="@drawable/config"

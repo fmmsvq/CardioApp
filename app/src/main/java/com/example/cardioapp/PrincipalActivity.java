@@ -29,7 +29,6 @@ public class PrincipalActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerlayout);
         findViewById(R.id.btnmenu).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
         NavigationView navigationView = findViewById(R.id.menu);
-        //navigationView.setItemIconTintList(null);
 
     // Base de Datos
         crearBD();
@@ -78,14 +77,13 @@ public class PrincipalActivity extends AppCompatActivity {
         Intent intent = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
         startActivity(intent);
     }
-/*
-    public void onClickListaPacientes(View view){
-        Intent intent = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
+    /*public void onClickNotificaciones(View view){
+        Intent intent = new Intent(PrincipalActivity.this, NotificacionesActivity.class);
         startActivity(intent);
     }
 
-    public void onClickNotificaciones(View view){
-        Intent intent = new Intent(PrincipalActivity.this, NotificacionesActivity.class);
+    public void onClickListaPacientes(View view){
+        Intent intent = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
         startActivity(intent);
     }
 
