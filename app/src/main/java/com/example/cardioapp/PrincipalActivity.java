@@ -17,7 +17,8 @@ import android.widget.ListView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class PrincipalActivity extends AppCompatActivity {
+public class PrincipalActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawerLayout;
     private MenuItem item;
     @Override
@@ -30,21 +31,10 @@ public class PrincipalActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerlayout);
         findViewById(R.id.btnmenu).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
         NavigationView navigationView = findViewById(R.id.menu);
-        /*int id = item.getItemId();
-        switch (id) {
-            case R.id.menu_principal :
-                startActivity(new Intent(PrincipalActivity.this, PrincipalActivity.class));
-            break;
-            case R.id.menu_pacientes:
-                startActivity(new Intent(PrincipalActivity.this, ListaPacientesActivity.class));
-                break;
-            case R.id.menu_config :
-                startActivity(new Intent(PrincipalActivity.this, ConfigActivity.class));
-                break;
-            case R.id.menu_notif :
-                startActivity(new Intent(PrincipalActivity.this, ListaPacientesActivity.class));
-                break;
-        }*/
+        if (navigationView != null) {
+            navigationView.setNavigationItemSelectedListener(PrincipalActivity.this);
+        }
+
 
     // Base de Datos
         crearBD();
@@ -65,7 +55,23 @@ public class PrincipalActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
 
+        if (id == R.id.menu_principal) {
+            startActivity(new Intent(PrincipalActivity.this, PrincipalActivity.class));
+        }else  if (id == R.id.menu_pacientes) {
+            startActivity(new Intent(PrincipalActivity.this, ListaPacientesActivity.class));
+        }else  if (id == R.id.menu_config) {
+            startActivity(new Intent(PrincipalActivity.this, ConfigActivity.class));
+        }else  if (id == R.id.menu_notif) {
+            startActivity(new Intent(PrincipalActivity.this, ListaPacientesActivity.class));
+        }else  if (id == R.id.nav_share) {
+            startActivity(new Intent(PrincipalActivity.this, AyudaActivity.class));
+        }
+        return item.isChecked();
+    }
 
     private void crearBD(){
         BD bd = new BD(this);
