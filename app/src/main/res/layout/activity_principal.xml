@@ -13,6 +13,7 @@
         <ImageButton
             android:id="@+id/btnmenu"
             style="@android:style/Widget.Holo.Light.ImageButton"
+            android:focusable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"

@@ -39,13 +39,6 @@ public class PrincipalActivity extends AppCompatActivity implements
     // Base de Datos
         crearBD();
 
-    // Click Contenedores para abrir ListaPacientes
-        findViewById(R.id.contenedor1).setClickable(true);
-        findViewById(R.id.contenedor2).setClickable(true);
-        findViewById(R.id.contenedor3).setClickable(true);
-        findViewById(R.id.contenedor4).setClickable(true);
-
-
     }
 /**Cierre del menú con la pulsación del botón Atrás o back de Android.**/
     public void onBackPressed() {
@@ -70,6 +63,7 @@ public class PrincipalActivity extends AppCompatActivity implements
         }else  if (id == R.id.nav_share) {
             startActivity(new Intent(PrincipalActivity.this, AyudaActivity.class));
         }
+        onBackPressed();//Quitamos menú para que no se muestre al volver
         return item.isChecked();
     }
 
