@@ -82,7 +82,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:onClick="onClick">
+                android:onClick="onClickNotificaciones">
             <TextView
                 android:id="@+id/NotificacionesSinRevisar"
                 android:layout_width="wrap_content"
@@ -118,7 +118,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:onClick="onClick">
+                android:onClick="onClickListaPacientes">
             <TextView
                 android:id="@+id/pacientes_punto_critico"
                 android:layout_width="wrap_content"
@@ -152,7 +152,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:onClick="onClick">
+                android:onClick="onClickListaPacientes">
             <TextView
                 android:id="@+id/nuevos_pacientes"
                 android:layout_width="wrap_content"
@@ -183,7 +183,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:onClick="onClick">
+                android:onClick="onClickListaPacientes">
             <TextView
                 android:id="@+id/n_total_de_pacientes"
                 android:layout_width="wrap_content"
@@ -234,7 +234,7 @@
                     android:textColor="#757575"
                     android:clickable="true"
                     android:focusable="true"
-                    android:onClick="onClick"/>
+                    android:onClick="onClickNotificaciones"/>
 
                 <TextView
                     android:id="@+id/notificaciones"
@@ -253,7 +253,7 @@
                     android:textColor="#757575"
                     android:clickable="true"
                     android:focusable="true"
-                    android:onClick="onClick"/>
+                    android:onClick="onClickNotificaciones"/>
             </RelativeLayout>
         </com.google.android.material.navigation.NavigationView>
     </androidx.constraintlayout.widget.ConstraintLayout>

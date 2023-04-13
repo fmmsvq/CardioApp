@@ -5,6 +5,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Notification;
+import android.content.ClipData;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,7 +19,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class PrincipalActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
-
+    private MenuItem item;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -29,6 +30,21 @@ public class PrincipalActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerlayout);
         findViewById(R.id.btnmenu).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
         NavigationView navigationView = findViewById(R.id.menu);
+        /*int id = item.getItemId();
+        switch (id) {
+            case R.id.menu_principal :
+                startActivity(new Intent(PrincipalActivity.this, PrincipalActivity.class));
+            break;
+            case R.id.menu_pacientes:
+                startActivity(new Intent(PrincipalActivity.this, ListaPacientesActivity.class));
+                break;
+            case R.id.menu_config :
+                startActivity(new Intent(PrincipalActivity.this, ConfigActivity.class));
+                break;
+            case R.id.menu_notif :
+                startActivity(new Intent(PrincipalActivity.this, ListaPacientesActivity.class));
+                break;
+        }*/
 
     // Base de Datos
         crearBD();
@@ -73,11 +89,11 @@ public class PrincipalActivity extends AppCompatActivity {
         }
     }
 
-    public void onClick(View view) {
+    /*public void onClick(View view) {
         Intent intent = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
         startActivity(intent);
-    }
-    /*public void onClickNotificaciones(View view){
+    }*/
+    public void onClickNotificaciones(View view){
         Intent intent = new Intent(PrincipalActivity.this, NotificacionesActivity.class);
         startActivity(intent);
     }
@@ -87,15 +103,15 @@ public class PrincipalActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickConfiguracion(View view) {
-        Intent intent = new Intent(PrincipalActivity.this, ConfiguracionActivity.class);
+    public void onClickConfig(View view) {
+        Intent intent = new Intent(PrincipalActivity.this, ConfigActivity.class);
         startActivity(intent);
     }
 
     public void onClickAyuda(View view) {
 
     }
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+    /*private class DrawerItemClickListener implements ListView.OnItemClickListener {
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
