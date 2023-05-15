@@ -1,9 +1,10 @@
-package com.example.cardioapp;
+package com.example.cardioapp.Medico;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.cardioapp.R;
 import com.example.cardioapp.ui.main.NotificacionesFragment;
 
 public class NotificacionesActivity extends AppCompatActivity {

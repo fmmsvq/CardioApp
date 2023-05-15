@@ -1,20 +1,20 @@
-package com.example.cardioapp;
+package com.example.cardioapp.Medico;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.app.Notification;
-import android.content.ClipData;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
+import com.example.cardioapp.AyudaActivity;
+import com.example.cardioapp.bd.BD;
+import com.example.cardioapp.ConfigActivity;
+import com.example.cardioapp.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class PrincipalActivity extends AppCompatActivity implements

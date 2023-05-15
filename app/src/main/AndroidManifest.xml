@@ -19,7 +19,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".NotificacionesActivity"
+            android:name=".Medico.NotificacionesActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -34,7 +34,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".VistaPacienteActivity"
+            android:name=".Medico.VistaPacienteActivity"
             android:exported="true" />
         <activity
             android:name=".SearchActivity"
@@ -48,7 +48,7 @@
             </intent-filter>
         </activity> <!-- Esta actividad acciona el dialogo de busqueda para iniciar busquedas en la actividad SearchActivity -->
         <activity
-            android:name=".ListaPacientesActivity"
+            android:name=".Medico.ListaPacientesActivity"
             android:exported="true">
 
             <!-- enable the search dialog to send searches to SearchableActivity -->
@@ -57,7 +57,7 @@
                 android:value=".SearchableActivity" />
         </activity>
         <activity
-            android:name=".PrincipalActivity"
+            android:name=".Medico.PrincipalActivity"
             android:exported="true" />
         <activity android:name=".SignInActivity" />
         <activity
