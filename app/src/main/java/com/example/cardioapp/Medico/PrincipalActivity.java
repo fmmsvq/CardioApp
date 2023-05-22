@@ -4,23 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.ContentValues;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.example.cardioapp.AyudaActivity;
-import com.example.cardioapp.bd.BD;
 import com.example.cardioapp.ConfigActivity;
+import com.example.cardioapp.LoginActivity;
 import com.example.cardioapp.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class PrincipalActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawerLayout;
-    private MenuItem item;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -35,25 +34,46 @@ public class PrincipalActivity extends AppCompatActivity implements
             navigationView.setNavigationItemSelectedListener(PrincipalActivity.this);
         }
 
-
-    // Base de Datos
-        crearBD();
-
     }
 /**Cierre del menú con la pulsación del botón Atrás o back de Android.**/
     public void onBackPressed() {
+    // 1. Instanciar AlertDialog.Builder con el constructor
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    // 2. Encadenamos varios métodos para establecer las características
+        builder.setMessage(R.string.mensaje_popup).setTitle(R.string.titulo_popup);
+    // 3. Añadimos los botones
+        builder.setPositiveButton(R.string.si_popup, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            // User tab OK
+                startActivity(new Intent(PrincipalActivity.this, LoginActivity.class));
+            }
+        });
+        builder.setNegativeButton(R.string.no_popup, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            // User tab NO
+                startActivity(new Intent(PrincipalActivity.this, PrincipalActivity.class));
+            }
+        });
+    // 4. Obtener el AlertDialog del Builder mediante el método create()
+        AlertDialog dialog = builder.create();
+
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
+        }else if(!drawerLayout.isDrawerOpen(GravityCompat.START)){
+            dialog.show();
+        }else {
             super.onBackPressed();
         }
     }
+
+
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // Manejar navegación de los clicks sobre los elementos de la vista.
         int id = item.getItemId();
 
         if (id == R.id.menu_principal) {
-            startActivity(new Intent(PrincipalActivity.this, PrincipalActivity.class));
+            drawerLayout.closeDrawer(GravityCompat.START);
+            //startActivity(new Intent(PrincipalActivity.this, PrincipalActivity.class));
         }else  if (id == R.id.menu_pacientes) {
             startActivity(new Intent(PrincipalActivity.this, ListaPacientesActivity.class));
         }else  if (id == R.id.menu_config) {
@@ -67,7 +87,7 @@ public class PrincipalActivity extends AppCompatActivity implements
         return item.isChecked();
     }
 
-    private void crearBD(){
+   /* private void crearBD(){
         BD bd = new BD(this);
         SQLiteDatabase db = bd.getWritableDatabase();
         if (db != null) {
@@ -87,12 +107,8 @@ public class PrincipalActivity extends AppCompatActivity implements
             valores.put("Paciente","Pedro Macías Ibáñez");
             //valores.put("","");
         }
-    }
-
-    /*public void onClick(View view) {
-        Intent intent = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
-        startActivity(intent);
     }*/
+
     public void onClickNotificaciones(View view){
         Intent intent = new Intent(PrincipalActivity.this, NotificacionesActivity.class);
         startActivity(intent);
@@ -102,22 +118,17 @@ public class PrincipalActivity extends AppCompatActivity implements
         Intent intent = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
         startActivity(intent);
     }
-
-    public void onClickConfig(View view) {
-        Intent intent = new Intent(PrincipalActivity.this, ConfigActivity.class);
-        startActivity(intent);
+/**Se llama cuando la captura de puntero está habilitada o deshabilitada para la ventana actual.*/
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 
-    public void onClickAyuda(View view) {
-
-    }
     /*private class DrawerItemClickListener implements ListView.OnItemClickListener {
-
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             selectItem(position);
         }
-
     }*/
 
 }

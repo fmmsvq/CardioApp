@@ -4,6 +4,7 @@ plugins {
 android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
+    compileOptions.encoding "ISO-8859-1" // Para las tildes
 
     defaultConfig {
         applicationId "com.example.cardioapp"
