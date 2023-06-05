@@ -9,11 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cardioapp.Medico.PrincipalActivity;
 import com.example.cardioapp.bd.Message;
-import com.example.cardioapp.bd.myDbAdapter;
+import com.example.cardioapp.bd.MedicoDbAdapter;
 
 public class LoginActivity extends AppCompatActivity {//implements View.OnClickListener {
     EditText email, pass;// , updateold, updatenew, delete;
-    myDbAdapter helper;
+    MedicoDbAdapter helper;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {//implements View.OnClickL
                 startActivity(i);
             }
         });
-        helper = new myDbAdapter(this);
+        helper = new MedicoDbAdapter(this);
     }
 
     private boolean comprobarUser(EditText email, EditText pass) {

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageButton
-            android:id="@+id/btnmenu"
+            android:id="@+id/btnvolver"
             style="@android:style/Widget.Holo.Light.ImageButton"
             android:focusable="true"
             android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/contenedor2"
             app:layout_constraintEnd_toStartOf="@+id/btnrefresh"
-            app:layout_constraintStart_toEndOf="@+id/btnmenu"
+            app:layout_constraintStart_toEndOf="@+id/btnvolver"
             app:layout_constraintTop_toTopOf="parent"
             />
 
@@ -184,7 +184,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:onClick="onClickListaPacientes">
+                android:onClick="onClickVistaPaciente">
             <TextView
                 android:id="@+id/n_total_de_pacientes"
                 android:layout_width="wrap_content"

@@ -22,13 +22,12 @@ public class PrincipalActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
      // Menu lateral
         drawerLayout = findViewById(R.id.drawerlayout);
-        findViewById(R.id.btnmenu).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
+        findViewById(R.id.btnvolver).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
         NavigationView navigationView = findViewById(R.id.menu);
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(PrincipalActivity.this);
@@ -114,8 +113,8 @@ public class PrincipalActivity extends AppCompatActivity implements
         startActivity(intent);
     }
 
-    public void onClickListaPacientes(View view){
-        Intent intent = new Intent(PrincipalActivity.this, ListaPacientesActivity.class);
+    public void onClickVistaPaciente(View view){
+        Intent intent = new Intent(PrincipalActivity.this, VistaPacienteActivity.class);
         startActivity(intent);
     }
 /**Se llama cuando la captura de puntero está habilitada o deshabilitada para la ventana actual.*/

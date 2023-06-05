@@ -12,15 +12,13 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import com.example.cardioapp.bd.Message;
-import com.example.cardioapp.bd.myDbAdapter;
+import com.example.cardioapp.bd.MedicoDbAdapter;
 
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.regex.Pattern;
 
 public class SignInActivity extends AppCompatActivity {
     EditText Email, Pass, Pass2, DNI;
-    myDbAdapter helper;
+    MedicoDbAdapter helper;
     //static String codigo="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +34,7 @@ public class SignInActivity extends AppCompatActivity {
         Pass= (EditText) findViewById(R.id.signup_pass1);
         Pass2 = (EditText) findViewById(R.id.signup_pass2);
 
-        helper = new myDbAdapter(this);
+        helper = new MedicoDbAdapter(this);
         //Lanzamos el método addUser que hace una inserción en BD, pulsando el boton de LogIn
         btnSignin.setOnClickListener(v -> {
             addUser(findViewById(R.id.drawerlayout3));

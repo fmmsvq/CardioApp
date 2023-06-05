@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textViewNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="María del Carmen Núñez Martínez"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-3dp" />
+
+<TableRow>
+    <TextView
+        android:id="@+id/tvEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginTop="14dp"
+        android:text="Edad:"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
+        tools:layout_editor_absoluteX="-3dp" />
+    <TextView
+        android:id="@+id/tvEdad2"
+        android:layout_height="38dp"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="59 años"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
+        tools:layout_editor_absoluteX="-3dp" />
+</TableRow>
+<TableRow>
+    <TextView
+        android:id="@+id/tvHistoriaClinica"
+        android:layout_width="210dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:text="Historia clínica: "
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombre2"
+        tools:layout_editor_absoluteX="0dp" />
+    <TextView
+        android:id="@+id/tvHistoriaClinica2"
+        android:layout_width="210dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:text="Soplo en el corazón"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombre2"
+        tools:layout_editor_absoluteX="0dp" />
+</TableRow>
+</TableLayout>

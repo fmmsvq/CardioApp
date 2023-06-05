@@ -1,37 +1,64 @@
 package com.example.cardioapp.Medico;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.ListView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-
-
 import com.example.cardioapp.AyudaActivity;
 import com.example.cardioapp.ConfigActivity;
+import com.example.cardioapp.Paciente.Paciente;
 import com.example.cardioapp.R;
+import com.example.cardioapp.bd.PacienteDbAdapter;
 import com.google.android.material.navigation.NavigationView;
 
-public class ListaPacientesActivity extends AppCompatActivity implements
-        NavigationView.OnNavigationItemSelectedListener{
+import java.util.ArrayList;
+
+public class ListaPacientesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+    PacienteDbAdapter helper;
+    ListView listaPacientes;
     private DrawerLayout drawerLayout;
-    private MenuItem item;
+    ArrayList<Paciente> arrayPacientes;
+    AdapterListaPacientes adapterListaPacientes;
+    //TextView nombrePaciente, apellidosPaciente;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_pacientes);
-
+    //AdapterListaPacientes
+        listaPacientes = findViewById(R.id.listapacientes);
+        arrayPacientes=generaListaPacientes();
+        //AdapterListaPacientes adapterListaPacientes = new AdapterListaPacientes(this, arrayPacientes);
+     //Menu
         drawerLayout = findViewById(R.id.drawerlayout2);
         findViewById(R.id.btnmenu2).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
         NavigationView navigationView = findViewById(R.id.menu2);
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(ListaPacientesActivity.this);
         }
+        adapterListaPacientes = new AdapterListaPacientes(this, this);
+        listaPacientes.setAdapter(adapterListaPacientes);
+      //  helper = new PacienteDbAdapter(this);
+
+
+
     }
 
+    private ArrayList<Paciente> generaListaPacientes() {
+        String[] nombrePacientes = getResources().getStringArray(R.array.paciente_nombre);
+        String[] apellidosPaciente = getResources().getStringArray(R.array.paciente_apellidos);
+        ArrayList<Paciente> list = new ArrayList<>();
 
+        for (int i = 0; i < nombrePacientes.length; i++) {
+            list.add(new Paciente(nombrePacientes[i], apellidosPaciente[i]));
+        }
+        return list;
+    }
     /**Cierre del menú con la pulsación del botón Atrás o back de Android.**/
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -40,6 +67,7 @@ public class ListaPacientesActivity extends AppCompatActivity implements
             super.onBackPressed();
         }
     }
+    /**Menu*/
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();

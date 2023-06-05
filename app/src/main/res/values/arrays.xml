@@ -9,4 +9,33 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+        <string name="ListaPacientes">Lista Pacientes</string>
+        <string-array name="paciente_nombre">
+            <item>Ana María</item>
+            <item>Juan Carlos</item>
+            <item>Pedro Manuel</item>
+            <item>Mónica</item>
+            <item>Santiago</item>
+            <item>Patricio</item>
+            <item>Alejandro</item>
+            <item>Juan Jesús</item>
+            <item>Rubén</item>
+            <item>Raúl</item>
+            <item>Nestor</item>
+            <item>Pedro</item>
+        </string-array>
+    <string-array name="paciente_apellidos">
+        <item>Macías Lagares</item>
+        <item>Fernández del Pozo</item>
+        <item>Dominguez Holgado</item>
+        <item>López Flores</item>
+        <item>Pedrosa López</item>
+        <item>Bermúdez Ruiz</item>
+        <item>Ibáñez Macías</item>
+        <item>Abad de la Rosa</item>
+        <item>Losada Pérez</item>
+        <item>Sánchez de la Higuera</item>
+        <item>Marín Pérez</item>
+        <item>Serrano Abaurre</item>
+    </string-array>
 </resources>
