@@ -53,9 +53,8 @@
         android:layout_width="116dp"
         android:layout_height="32dp"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="11dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="22dp"
         android:fontFamily="monospace"
         android:text="@string/Paciente"
         android:textAlignment="center"
@@ -63,44 +62,44 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:translationZ="90dp"
-        app:layout_constraintBottom_toTopOf="@+id/contenedor1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/contenedor1"
-        android:layout_width="400dp"
-        android:layout_height="161dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="3dp"
+        android:layout_width="380dp"
+        android:layout_height="151dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/contenedor_redondeado"
         android:visibility="visible"
         app:layout="@layout/paciente_nav1"
         app:layout_constraintBottom_toTopOf="@+id/contenedor2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contenedor2">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="279dp"
+            android:layout_width="229dp"
             android:layout_height="48dp"
             android:layout_gravity="bottom|center"
             android:background="@drawable/bordes_redondeados"
-            android:textSize="18sp"
-            android:textAlignment="center"/>
+            android:contentDescription="@string/desplegar"
+            android:textAlignment="center"
+            android:textSize="18sp" />
 
     </com.google.android.material.navigation.NavigationView>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/contenedor2"
-        android:layout_width="400dp"
+        android:layout_width="380dp"
         android:layout_height="280dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/contenedor_redondeado"
@@ -113,56 +112,63 @@
             android:id="@+id/grafica"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:foregroundGravity="fill_horizontal"
-            >
+            android:foregroundGravity="fill_horizontal">
+
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/grafica500"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:visibility="visible"/>
+                android:visibility="visible" />
+
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/grafica1000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
+
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/grafica5000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
+
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/grafica10000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
+
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/grafica50000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
+
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/grafica100000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
+
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/grafica500000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
         </android.widget.FrameLayout>
     </com.google.android.material.navigation.NavigationView>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/contenedor3"
-        android:layout_width="399dp"
-        android:layout_height="195dp"
+        android:layout_width="380dp"
+        android:layout_height="171dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
@@ -170,7 +176,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contenedor2"
         tools:ignore="MissingConstraints">
+
         <com.jjoe64.graphview.GraphView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

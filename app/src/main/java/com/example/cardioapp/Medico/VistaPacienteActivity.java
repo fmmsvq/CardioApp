@@ -35,7 +35,7 @@ public class VistaPacienteActivity extends AppCompatActivity {
         }
         spinner = findViewById(R.id.spinner);
         List<String> listaDropdown = new ArrayList<>();
-        listaDropdown.add(0, "500Hz");
+        listaDropdown.add(0, "500");
         listaDropdown.add("1000");
         listaDropdown.add("5000");
         listaDropdown.add("10000");
@@ -67,11 +67,11 @@ public class VistaPacienteActivity extends AppCompatActivity {
                         GraphView graphV = findViewById(R.id.grafica10000);
                         graphV.setVisibility(view.VISIBLE);
                     }else if(arrayAdapter.getItem(position)=="50000") {
-                        GraphView graphV = findViewById(R.id.grafica10000);
+                        GraphView graphV = findViewById(R.id.grafica50000);
                         graphV.setVisibility(view.VISIBLE);
                     }
                     //inflate grafica
-                    creaGrafica();
+                    creaGrafica(arrayAdapter.getItem(position));
                     //CAMBIAR POR IMPRIMIR EL GRAPHVIEW QUE CORRESPONDE
                     Toast.makeText(parent.getContext(),"Seleccionado: " +item, Toast.LENGTH_SHORT).show();
                 }
@@ -82,7 +82,7 @@ public class VistaPacienteActivity extends AppCompatActivity {
         });
     }
 
-    private void creaGrafica() {
+    private void creaGrafica(String s) {
         //Añadimos los datos al graph view.
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
                 // Añadimos cada punto de los ejes.
@@ -98,10 +98,10 @@ public class VistaPacienteActivity extends AppCompatActivity {
         });
 
         // Título del graph view.
-        graphView.setTitle("My Graph View");
+        graphView.setTitle(s+"Hz");
 
         // Color del texto del graph view.
-        graphView.setTitleColor(R.color.purple_200);
+        graphView.setTitleColor(R.color.colorPrimaryDark);
 
         // Tamaño de letra del título
         graphView.setTitleTextSize(18);
