@@ -2,14 +2,14 @@ plugins {
     id 'com.android.application'
 }
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
     buildToolsVersion "30.0.3"
     compileOptions.encoding "ISO-8859-1" // Para las tildes
 
     defaultConfig {
         applicationId "com.example.cardioapp"
         minSdkVersion 27
-        targetSdk 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -54,20 +54,22 @@ dependencies {
         exclude group: "com.android.support"
     }
 
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.annotation:annotation:1.2.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.makeramen:roundedimageview:2.3.0'
+    //noinspection GradleDependency
     implementation "androidx.navigation:navigation-fragment:$nav_version"
+    //noinspection GradleDependency
     implementation "androidx.navigation:navigation-ui:$nav_version"
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'com.microsoft.identity.client:msal:2.1.0'
     // Include the sdk as a dependency
     implementation 'com.microsoft.graph:microsoft-graph:4.1.0'
@@ -78,6 +80,14 @@ dependencies {
     //Rounded image view
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'com.jjoe64:graphview:4.2.2'
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth'
+
 }
 apply plugin: 'com.android.application'
 
