@@ -53,22 +53,23 @@ public class VistaPacienteActivity extends AppCompatActivity {
             //Register a callback to be invoked when an item in this AdapterView has been selected.
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // Item seleccionado. Recuperar el elemento seleccionado con parent.getItemAtPosition(pos)
                 if (parent.getItemAtPosition(position).equals("Elige")){
                 }else {
                     String item = parent.getItemAtPosition(position).toString();
                     FrameLayout frameLayout = findViewById(R.id.grafica);
                     if(arrayAdapter.getItem(position)=="1000"){
                         GraphView graphV = findViewById(R.id.grafica1000);
-                        graphV.setVisibility(view.VISIBLE);
+                        graphV.setVisibility(View.VISIBLE);
                     }else if(arrayAdapter.getItem(position)=="5000"){
                         GraphView graphV = findViewById(R.id.grafica5000);
-                        graphV.setVisibility(view.VISIBLE);
+                        graphV.setVisibility(View.VISIBLE);
                     }else if(arrayAdapter.getItem(position)=="10000") {
                         GraphView graphV = findViewById(R.id.grafica10000);
-                        graphV.setVisibility(view.VISIBLE);
+                        graphV.setVisibility(View.VISIBLE);
                     }else if(arrayAdapter.getItem(position)=="50000") {
                         GraphView graphV = findViewById(R.id.grafica50000);
-                        graphV.setVisibility(view.VISIBLE);
+                        graphV.setVisibility(View.VISIBLE);
                     }
                     //inflate grafica
                     creaGrafica(arrayAdapter.getItem(position));

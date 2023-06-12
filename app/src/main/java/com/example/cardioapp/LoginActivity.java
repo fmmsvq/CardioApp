@@ -8,18 +8,24 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cardioapp.Medico.PrincipalActivity;
-import com.example.cardioapp.bd.Message;
-import com.example.cardioapp.bd.MedicoDbAdapter;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 
 public class LoginActivity extends AppCompatActivity {//implements View.OnClickListener {
     EditText email, pass;// , updateold, updatenew, delete;
-    MedicoDbAdapter helper;
+    //MedicoDbAdapter helper;
+    private FirebaseAuth mAuth;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Button btnSignin = findViewById(R.id.signin);
         Button btnLogin = findViewById(R.id.login);
+        FirebaseApp.initializeApp(this);
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
 
         email = (EditText) findViewById(R.id.email);
         pass = (EditText) findViewById(R.id.password);
@@ -31,15 +37,20 @@ public class LoginActivity extends AppCompatActivity {//implements View.OnClickL
         });
         //Abrimos Actividad de Principal pulsando el boton de LogIn
         btnLogin.setOnClickListener(v -> {
-            if(comprobarUser(email,pass)){
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            if(currentUser != null){
+                currentUser.reload();
+            }
+
+           // if(comprobarUser(email,pass)){
                 Intent i = new Intent(LoginActivity.this, PrincipalActivity.class);
                 startActivity(i);
-            }
+            //}
         });
-        helper = new MedicoDbAdapter(this);
+        //helper = new MedicoDbAdapter(this);
     }
 
-    private boolean comprobarUser(EditText email, EditText pass) {
+    /*private boolean comprobarUser(EditText email, EditText pass) {
         String emailString = email.getText().toString();
         String passString = pass.getText().toString();
         boolean res=false;
@@ -52,6 +63,6 @@ public class LoginActivity extends AppCompatActivity {//implements View.OnClickL
             Message.message(getApplicationContext(),"Añada su correo y contraseña");
         }else res=true;
         return res;
-    }
+    }*/
 
 }

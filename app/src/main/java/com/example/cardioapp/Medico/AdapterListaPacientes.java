@@ -62,7 +62,7 @@ public class AdapterListaPacientes extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        TextView nombrePaciente = this.activity.findViewById(R.id.paciente_nombre);
+        TextView nombrePaciente = this.activity.findViewById(R.id.textViewNombre);
 
         //TextView apellidoPaciente = convertView.findViewById(R.id.paciente_nombre);
         CharSequence s = item.getNombrePaciente();
@@ -92,7 +92,7 @@ public class AdapterListaPacientes extends BaseAdapter {
        //TextView apellidoPaciente;
 
         public ViewHolder(View view) {
-            nombrePaciente = view.findViewById(R.id.paciente_nombre);
+            nombrePaciente = view.findViewById(R.id.textViewNombre);
            // apellidoPaciente = view.findViewById(R.id.paciente_apellido);
         }
     }

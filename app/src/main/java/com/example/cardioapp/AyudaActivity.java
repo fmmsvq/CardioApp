@@ -26,7 +26,7 @@ public class AyudaActivity extends AppCompatActivity {
 
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
-        CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
+        /*CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
         toolBarLayout.setTitle(getTitle());
 
         FloatingActionButton fab = binding.fab;
@@ -36,6 +36,6 @@ public class AyudaActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
     }
 }

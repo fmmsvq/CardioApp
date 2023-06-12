@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.cardioapp.R;
-import com.example.cardioapp.ui.main.NotificacionesFragment;
 
+/**Esta Activity va a ser la lista de pacientes pero filtrada por orden de actualizacion de notificaciones*/
 public class NotificacionesActivity extends AppCompatActivity {
 
     @Override
@@ -14,9 +14,9 @@ public class NotificacionesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notificaciones);
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
+            /*getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, NotificacionesFragment.newInstance())
-                    .commitNow();
+                    .commitNow();*/
         }
     }
 }

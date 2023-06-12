@@ -9,8 +9,7 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
-        <string name="ListaPacientes">Lista Pacientes</string>
-        <string-array name="paciente_nombre">
+    <string-array name="paciente_nombre">
             <item>Ana María</item>
             <item>Juan Carlos</item>
             <item>Pedro Manuel</item>

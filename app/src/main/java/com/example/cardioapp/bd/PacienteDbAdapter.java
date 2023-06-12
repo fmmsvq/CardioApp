@@ -19,7 +19,7 @@ public class PacienteDbAdapter {
         String[] columns = {PacienteDbAdapter.DbHelper.UID, PacienteDbAdapter.DbHelper.EMAIL, PacienteDbAdapter.DbHelper.MyPASSWORD};
         //No existen los boolean, se almacenan como INTEGER con el valor 0(falso) o 1(verdadero). Igual sucede con los campos fecha y hora. Estos se pueden almacenas como TEXT, REAL o INTEGER. En función del tipo elegido se almacenará en distintos formatos, por ejemplo, si es TEXT, el dato tendrá el formato "YYYY-MM-DD HH:MM:SS.SSS".
         Cursor cursor =db.rawQuery("SELECT * FROM "+ PacienteDbAdapter.DbHelper.TABLE_NAME+" WHERE "+ PacienteDbAdapter.DbHelper.EMAIL  + " = ?;",new String[] {email});
-        return cursor.getCount()==0?false: true;
+        return cursor.getCount() != 0;
     }
 
     public boolean comprobarPassEnBD(String email, String pass) {
@@ -28,7 +28,7 @@ public class PacienteDbAdapter {
         String[] columns = {PacienteDbAdapter.DbHelper.UID, PacienteDbAdapter.DbHelper.EMAIL, PacienteDbAdapter.DbHelper.MyPASSWORD};
         //No existen los boolean, se almacenan como INTEGER con el valor 0(falso) o 1(verdadero). Igual sucede con los campos fecha y hora. Estos se pueden almacenas como TEXT, REAL o INTEGER. En función del tipo elegido se almacenará en distintos formatos, por ejemplo, si es TEXT, el dato tendrá el formato "YYYY-MM-DD HH:MM:SS.SSS".
         Cursor cursor =db.rawQuery("SELECT * FROM "+ PacienteDbAdapter.DbHelper.TABLE_NAME+" WHERE "+ PacienteDbAdapter.DbHelper.EMAIL + " = ? AND "+ PacienteDbAdapter.DbHelper.MyPASSWORD+" = ?;", new String[] {email, pass});
-        return cursor.getCount()==0?false: true;
+        return cursor.getCount() != 0;
     }
 
     public long insertData(String email, String pass, String dni ) {
@@ -109,7 +109,7 @@ public class PacienteDbAdapter {
                 +ID_MEDICO+" VARCHAR(255),"
                 +" FOREIGN KEY ("+ID_MEDICO+") REFERENCES "+MED_TBL+"("+UID+"));";
         private static final String DROP_TABLE ="DROP TABLE IF EXISTS "+TABLE_NAME;
-        private Context context;
+        private final Context context;
 
         public DbHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_Version);

@@ -2,8 +2,8 @@ package com.example.cardioapp.Paciente;
 
 public class Paciente {
 
-    private String nombrePaciente;
-    private String apellidosPaciente;
+    private final String nombrePaciente;
+    private final String apellidosPaciente;
     private long ID;
 
     public Paciente(String nombre, String apellidos) {

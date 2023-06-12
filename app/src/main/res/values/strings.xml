@@ -2,24 +2,19 @@
     <string name="app_name">CardioApp</string>
 
     <!--Log in -->
-    <string name="title_activity_login">LoginActivity</string>
     <string name="activity_login">activity_login</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="password1">Password1</string>
     <string name="action_sign_in">Confirmar</string>
     <string name="action_sign_up">Regístrate</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="logo_google">"Google"</string>
+    <string name="logo_microsoft">"Microsoft"</string>
+
     <!--Sign in - Registro -->
     <string name="signup_pass1">pass1</string>
     <string name="signup_pass2">pass2</string>
     <string name="dni_signin">DNI</string>
-    <string name="anionacimiento_signin">Año de nacimiento</string>
-    <string name="centromedico_signin">Centro médico</string>
-    <string name="enviar_mail">Enviar email</string>
 
     <!--Sign in - Registro -->
     <string name="codigo_registro">Añade aquí el código</string>
@@ -28,14 +23,11 @@
     <string name="principal">Principal</string>
     <string name="menu">Menú</string>
     <string name="menu_bottom">Ayuda</string>
-    <string name="navigation_drawer_open">Abrir</string>
-    <string name="navigation_drawer_close">Cerrar</string>
     <string name="actualizar">Actualizar</string>
     <string name="notificaciones_sin_revisar">Notificaciones sin revisar</string>
     <string name="nuevos_pacientes">Nuevos pacientes</string>
     <string name="notificaciones">Notificaciones</string>
     <string name="alertas">Alertas</string>
-    <string name="estad_stica_de_pacientes_por_encima_de_punto_cr_tico">Estadística de pacientes por encima de punto crítico</string>
     <string name="n_total_de_pacientes">Nº total de pacientes</string>
     <string name="pacientes_punto_critico">Estadistica de pacientes por encima de punto crítico</string>
 
@@ -55,20 +47,14 @@
     <string name="Principal">Principal</string>
     <string name="Notificaciones">Notificaciones</string>
     <string name="Configuracion">Configuracion</string>
-    <string name="Medico">Medico</string>
-    <string name="maria_del_pozo_gomez">Maria del Pozo Gomez</string>
-    <string name="Alertas">Alertas</string>
-    <string name="search">Search</string>
     <string name="lista_de_pacientes">Lista de Pacientes</string>
     <string name="cardioapp">CardioApp</string>
     <string name="busqueda">Búsqueda</string>
     <string name="Paciente">Paciente</string>
     <string name="descripcion">Descripción</string>
-    <string name="action_sign_in_short">Sign in</string>
 
     <!--Pantalla AYUDA-->
     <string name="title_activity_ayuda">AyudaActivity</string>
-    <string name="ajustes_accion">Ajustes</string>
 
     <!--Pantalla CONFIG-->
     <string name="title_activity_config">ConfigActivity</string>

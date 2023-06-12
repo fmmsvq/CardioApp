@@ -18,7 +18,6 @@
 
 <TableRow>
     <TextView
-        android:id="@+id/tvEdad"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_marginTop="14dp"
@@ -29,7 +28,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
         tools:layout_editor_absoluteX="-3dp" />
     <TextView
-        android:id="@+id/tvEdad2"
         android:layout_height="38dp"
         android:layout_width="wrap_content"
         android:layout_marginTop="14dp"
@@ -42,7 +40,6 @@
 </TableRow>
 <TableRow>
     <TextView
-        android:id="@+id/tvHistoriaClinica"
         android:layout_width="210dp"
         android:layout_height="38dp"
         android:layout_marginTop="8dp"
@@ -53,11 +50,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNombre2"
         tools:layout_editor_absoluteX="0dp" />
     <TextView
-        android:id="@+id/tvHistoriaClinica2"
         android:layout_width="210dp"
         android:layout_height="38dp"
         android:layout_marginTop="8dp"
-        android:text="Soplo en el corazón"
+        android:text="Miocardiopatía hipertrófica"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="12sp"
         android:textStyle="bold"

@@ -150,14 +150,12 @@
                 android:visibility="invisible" />
 
             <com.jjoe64.graphview.GraphView
-                android:id="@+id/grafica100000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:visibility="invisible" />
 
             <com.jjoe64.graphview.GraphView
-                android:id="@+id/grafica500000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
