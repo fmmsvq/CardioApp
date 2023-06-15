@@ -113,13 +113,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foregroundGravity="fill_horizontal">
-
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/grafica100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:visibility="visible" />
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/grafica500"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:visibility="visible" />
+                android:visibility="invisible" />
 
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/grafica1000"
@@ -149,17 +154,7 @@
                 android:layout_alignParentTop="true"
                 android:visibility="invisible" />
 
-            <com.jjoe64.graphview.GraphView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:visibility="invisible" />
 
-            <com.jjoe64.graphview.GraphView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:visibility="invisible" />
         </android.widget.FrameLayout>
     </com.google.android.material.navigation.NavigationView>
 
@@ -178,6 +173,7 @@
         tools:ignore="MissingConstraints">
 
         <com.jjoe64.graphview.GraphView
+            android:id="@+id/Fluido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true" />
