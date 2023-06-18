@@ -37,4 +37,32 @@
         <item>Marín Pérez</item>
         <item>Serrano Abaurre</item>
     </string-array>
+    <string-array name="edad">
+        <item>59</item>
+        <item>82</item>
+        <item>67</item>
+        <item>90</item>
+        <item>67</item>
+        <item>88</item>
+        <item>78</item>
+        <item>93</item>
+        <item>74</item>
+        <item>67</item>
+        <item>59</item>
+        <item>86</item>
+    </string-array>
+    <string-array name="historia_clinica">
+        <item>Hipertensión</item>
+        <item>Arritmias</item>
+        <item>Insuficiencia Cardíaca</item>
+        <item>Hipertensión</item>
+        <item>Arritmias</item>
+        <item>Insuficiencia Cardíaca</item>
+        <item>Hipertensión</item>
+        <item>Arritmias</item>
+        <item>Insuficiencia Cardíaca</item>
+        <item>Hipertensión</item>
+        <item>Arritmias</item>
+        <item>Insuficiencia Cardíaca</item>
+    </string-array>
 </resources>

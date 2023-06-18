@@ -52,50 +52,23 @@ public class AdapterListaPacientes extends BaseAdapter {
      *   @param viewGroup: ViewGroup padre al que se adjuntará la vista.*/
     @Override
     public View getView(int posicion, View convertView, ViewGroup viewGroup) {
-        ViewHolder viewHolder;
-        //ListaPacientesActivity instance = new ListaPacientesActivity(this);
-        Paciente item = getItem(posicion);
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.activity_lista_pacientes, viewGroup, false);
-            viewHolder = new ViewHolder(convertView);
-            convertView.setTag(viewHolder);
-        } else {
-            viewHolder = (ViewHolder) convertView.getTag();
+        View view = convertView;
+        //Paciente item = getItem(posicion);
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.paciente_nav1, null);
         }
-        TextView nombrePaciente = this.activity.findViewById(R.id.textViewNombre);
+        Paciente p = pacientes.get(posicion);
 
-        //TextView apellidoPaciente = convertView.findViewById(R.id.paciente_nombre);
-        CharSequence s = item.getNombrePaciente();
-        nombrePaciente.setText("maria");
-        //apellidoPaciente.setText(item.getApellidosPaciente());
-        // Inflar o reutilizar la vista
-        /*if (convertView == null) {
-            //convertView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_lista_pacientes, viewGroup, false);
-            convertView = LayoutInflater.from(context).inflate(R.layout.activity_lista_pacientes, viewGroup, false);
-        }
-        // Obtener los datos del elemento en la posición actual
-        Paciente item = getItem(posicion);
-        //Paciente p = item
-        // Configurar la vista con los datos correspondientes
-            // Por ejemplo, si tienes un TextView en el layout "list_item_layout":
-        TextView nombrePaciente = convertView.findViewById(R.id.paciente_nombre);
-        //TextView apellidoPaciente = convertView.findViewById(R.id.paciente_apellido);
-        String s= item.getApellidosPaciente();
-        //apellidoPaciente.setText(s);
-        nombrePaciente.setText(item.getNombrePaciente());*/
+        TextView nombrePaciente = view.findViewById(R.id.textViewNombre);
+        TextView histClinica = view.findViewById(R.id.historia_clinica);
+        TextView edad = view.findViewById(R.id.edad);
 
-        return convertView;
+        CharSequence s = p.getEdad().toString();
+        nombrePaciente.setText(p.getNombrePaciente() + " " + p.getApellidosPaciente());
+        edad.setText(p.getEdad().toString()+" años");
+        histClinica.setText(p.getHistoriaClinica());
+
+        return view;
     }
-
-    private class ViewHolder {
-        TextView nombrePaciente;
-       //TextView apellidoPaciente;
-
-        public ViewHolder(View view) {
-            nombrePaciente = view.findViewById(R.id.textViewNombre);
-           // apellidoPaciente = view.findViewById(R.id.paciente_apellido);
-        }
-    }
-
 
 }

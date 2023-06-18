@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
 
+<resources>
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+    <!-- Personalizacion de la ActionBar -->
+    <style name="ColorTopBar" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/action_bar_title_color</item>
+        <item name="android:textAlignment">center</item>
+    </style>
 </resources>

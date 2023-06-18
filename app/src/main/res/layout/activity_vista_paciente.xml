@@ -28,6 +28,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_volver"
         app:tint="@color/browser_actions_title_color"
+        android:onClick="onClickVolver"
         />
 
         <!--<ImageButton
@@ -114,7 +115,7 @@
             android:layout_height="wrap_content"
             android:foregroundGravity="fill_horizontal">
             <com.jjoe64.graphview.GraphView
-                android:id="@+id/grafica100"
+                android:id="@+id/graficaPpal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"

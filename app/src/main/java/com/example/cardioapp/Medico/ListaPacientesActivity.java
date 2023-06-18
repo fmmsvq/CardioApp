@@ -52,10 +52,12 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
     private ArrayList<Paciente> generaListaPacientes() {
         String[] nombrePacientes = getResources().getStringArray(R.array.paciente_nombre);
         String[] apellidosPaciente = getResources().getStringArray(R.array.paciente_apellidos);
+        String[] edad = getResources().getStringArray(R.array.edad);
+        String[] historiaClinica = getResources().getStringArray(R.array.historia_clinica);
         ArrayList<Paciente> list = new ArrayList<>();
 
         for (int i = 0; i < nombrePacientes.length; i++) {
-            list.add(new Paciente(nombrePacientes[i], apellidosPaciente[i]));
+            list.add(new Paciente(nombrePacientes[i], apellidosPaciente[i], Integer.parseInt(edad[i]), historiaClinica[i]));//Integer.valueOf()
         }
         return list;
     }

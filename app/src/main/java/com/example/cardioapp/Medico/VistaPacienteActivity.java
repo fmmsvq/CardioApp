@@ -1,5 +1,8 @@
 package com.example.cardioapp.Medico;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,13 +11,16 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 
+import com.example.cardioapp.LoginActivity;
 import com.example.cardioapp.R;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -37,10 +43,10 @@ public class VistaPacienteActivity extends AppCompatActivity implements AdapterV
         graphView = findViewById(R.id.grafica500);
 
         //Botón de volver
-        if (getSupportActionBar() != null){
+        /*if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
+        }*/
         spinner = findViewById(R.id.spinner);
 
         //DropDown
@@ -89,7 +95,8 @@ public class VistaPacienteActivity extends AppCompatActivity implements AdapterV
         LineGraphSeries<DataPoint> series1;
         LineGraphSeries<DataPoint> series2;
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("/data.txt"));//C:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/data.txt"));
+            File file = new File(getFilesDir(), "data.txt");
+            BufferedReader reader = new BufferedReader(new FileReader(file));//C:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/data.txt"));
             Path currentRelativePath = Paths.get("");
             String string = currentRelativePath.toAbsolutePath().toString();
             Toast.makeText(this,"Path: " +string, Toast.LENGTH_SHORT).show();
@@ -212,6 +219,8 @@ public class VistaPacienteActivity extends AppCompatActivity implements AdapterV
         }
 
 
-
+    public void onClickVolver(View view) {
+        startActivity(new Intent(VistaPacienteActivity.this, PrincipalActivity.class));
+    }
 
 }
