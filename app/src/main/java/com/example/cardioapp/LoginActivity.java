@@ -2,6 +2,7 @@ package com.example.cardioapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,9 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class LoginActivity extends AppCompatActivity {//implements View.OnClickListener {
-    EditText email, pass;// , updateold, updatenew, delete;
-    //MedicoDbAdapter helper;
+public class LoginActivity extends AppCompatActivity {
+    EditText email, pass;
     private FirebaseAuth mAuth;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,23 +44,27 @@ public class LoginActivity extends AppCompatActivity {//implements View.OnClickL
         //Abrimos Actividad de Principal pulsando el boton de LogIn
         btnLogin.setOnClickListener(v -> {
             String emailString = email.getText().toString().trim();
-            String passString = email.getText().toString().trim();
-            if(emailString.isEmpty()&& passString.isEmpty()){
-                Toast.makeText(LoginActivity.this, "Debes poner un email", Toast.LENGTH_SHORT);
+            String passString = pass.getText().toString().trim();
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+
+            if(emailString.isEmpty()){
+                Toast.makeText(LoginActivity.this, "El email no puede estar vacio", Toast.LENGTH_SHORT).show();
+            }else if(!Patterns.EMAIL_ADDRESS.matcher(emailString).matches()){
+                Toast.makeText(LoginActivity.this, "Debe poner un email valido", Toast.LENGTH_SHORT).show();
+            }else if(passString.isEmpty()){
+                Toast.makeText(LoginActivity.this, "La contrasena no puede estar vacia", Toast.LENGTH_SHORT).show();
             }else{
                 loginUsuario(emailString, passString);
             }
-            FirebaseUser currentUser = mAuth.getCurrentUser();
             if(currentUser != null){
                 currentUser.reload();
             }
-
+            /*Intent i = new Intent(LoginActivity.this, PrincipalActivity.class);
+            startActivity(i);*/
            // if(comprobarUser(email,pass)){
-                Intent i = new Intent(LoginActivity.this, PrincipalActivity.class);
-                startActivity(i);
-            //}
+
+
         });
-        //helper = new MedicoDbAdapter(this);
     }
 
     private void loginUsuario(String emailString, String passString) {
@@ -68,35 +72,22 @@ public class LoginActivity extends AppCompatActivity {//implements View.OnClickL
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this, "Sesion iniciada con exito", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(LoginActivity.this, PrincipalActivity.class));
                     finish();
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    Toast.makeText(LoginActivity.this, "Sesion iniciada con éxito", Toast.LENGTH_SHORT);
                 }else{
-                    Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT);
-
+                    Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(LoginActivity.this, "Error al iniciar sesion", Toast.LENGTH_SHORT);
+                    Toast.makeText(LoginActivity.this, "Error al iniciar sesion" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginActivity.this, "Error al iniciar sesion" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+
             }
         });
     }
-
-    /*private boolean comprobarUser(EditText email, EditText pass) {
-        String emailString = email.getText().toString();
-        String passString = pass.getText().toString();
-        boolean res=false;
-        //Comprobar que el user esta en BD
-        if (helper.comprobarUserEnBD(emailString)==false){//Si user no está en BD
-            Message.message(getApplicationContext(),"El usuario "+email.getText().toString()+" no existe");
-        }else if (helper.comprobarPassEnBD(emailString, passString)==false) {//Si pass no coicide
-            Message.message(getApplicationContext(), "Contraseña incorrecta");
-        }else if(emailString.isEmpty() || passString.isEmpty()){
-            Message.message(getApplicationContext(),"Añada su correo y contraseña");
-        }else res=true;
-        return res;
-    }*/
 
 }

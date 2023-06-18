@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CardioApp">
+
         <activity
             android:name=".CodigoRegistroActivity"
             android:exported="false">
@@ -95,6 +96,7 @@
                     android:scheme="com.example.cardioapp" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
