@@ -156,7 +156,6 @@
                 android:layout_alignParentTop="true"
                 android:visibility="invisible" />
 
-
         </android.widget.FrameLayout>
     </com.google.android.material.navigation.NavigationView>
 
