@@ -20,7 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class ListaPacientesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class ListaPacientesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener{
     PacienteDbAdapter helper;
     ListView listaPacientes;
     private DrawerLayout drawerLayout;
@@ -45,15 +45,7 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
         adapterListaPacientes = new AdapterListaPacientes(this, this);
         listaPacientes.setAdapter(adapterListaPacientes);
       //Hacer clikable los elementos de la lista:
-        listaPacientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               // Abrir actividad de la vista de paciente
-                Intent intent = new Intent(ListaPacientesActivity.this, VistaPacienteActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        listaPacientes.setOnItemClickListener(this);
 
     }
 
@@ -96,5 +88,14 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
         }
         onBackPressed();//Quitamos menú para que no se muestre al volver
         return item.isChecked();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent();
+        intent.setClass(this, VistaPacienteActivity.class);
+        intent.putExtra("position", position);
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
 }

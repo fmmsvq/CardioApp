@@ -10,6 +10,7 @@
 
     <color name="colorPrimary">#D4D4D4</color>
     <color name="colorPrimaryDark">#818183</color>
-    <color name="action_bar_title_color">#99182C</color>
+    <color name="red">#99182C</color>
+    <color name="action_bar_title_color">#FB0027</color>
 
 </resources>

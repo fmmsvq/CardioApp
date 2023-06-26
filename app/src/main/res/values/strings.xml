@@ -38,9 +38,10 @@
     <string name="no_popup">No</string>
     <string name="mensaje_popup_usuariocreado">Añade el código que has recibio por email</string>
     <string name="titulo_popup_usuariocreado">¡Usuario creado correctamente!</string>
-    <string name="ok_popup_usuariocreado">Ok</string>
-
-
+    <string name="numero1_ppal">3</string>
+    <string name="numero2_ppal">5</string>
+    <string name="numero3_ppal">2</string>
+    <string name="grafica_paciente">Paciente</string>
 
     <!--Menu - Medico -->
     <string name="Pacientes">Pacientes</string>

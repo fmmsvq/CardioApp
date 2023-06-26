@@ -84,16 +84,28 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:onClick="onClickNotificaciones">
-            <TextView
-                android:id="@+id/NotificacionesSinRevisar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints="username"
-                android:ems="10"
-                android:labelFor="@id/NotificacionesSinRevisar"
-                android:text="@string/notificaciones_sin_revisar"
-                android:textAlignment="center"
-                />
+
+                <TextView
+                    android:id="@+id/numero2_ppal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="casual"
+                    android:text="@string/numero2_ppal"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/NotificacionesSinRevisar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="username"
+                    android:ems="10"
+                    android:labelFor="@id/NotificacionesSinRevisar"
+                    android:text="@string/notificaciones_sin_revisar"
+                    android:textAlignment="center"
+                    />
             </RelativeLayout>
         </com.google.android.material.navigation.NavigationView>
 
@@ -120,15 +132,27 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:onClick="onClickListaPacientes">
-            <TextView
-                android:id="@+id/pacientes_punto_critico"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints="username"
-                android:ems="10"
-                android:labelFor="@+id/pacientes_punto_critico"
-                android:text="@string/pacientes_punto_critico"
-                android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/pacientes_punto_critico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="username"
+                    android:ems="10"
+                    android:labelFor="@+id/pacientes_punto_critico"
+                    android:text="@string/pacientes_punto_critico"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="casual"
+                    android:text="@string/numero1_ppal"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
             </RelativeLayout>
         </com.google.android.material.navigation.NavigationView>
 
@@ -154,15 +178,27 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:onClick="onClickListaPacientes">
-            <TextView
-                android:id="@+id/nuevos_pacientes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints="username"
-                android:ems="10"
-                android:labelFor="@+id/nuevos_pacientes"
-                android:text="@string/nuevos_pacientes"
-                android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/numero3_ppal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="casual"
+                    android:text="@string/numero3_ppal"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nuevos_pacientes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="username"
+                    android:ems="10"
+                    android:labelFor="@+id/nuevos_pacientes"
+                    android:text="@string/nuevos_pacientes"
+                    android:textAlignment="center"/>
             </RelativeLayout>
         </com.google.android.material.navigation.NavigationView>
 
@@ -185,16 +221,16 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:onClick="onClickVistaPaciente">
-            <TextView
-                android:id="@+id/n_total_de_pacientes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints="username"
-                android:ems="10"
-                android:labelFor="@+id/n_total_de_pacientes"
-                android:text="@string/n_total_de_pacientes"
-                android:clickable="true"
-                android:textAlignment="center"/>
+                <TextView
+                    android:id="@+id/n_total_de_pacientes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="username"
+                    android:ems="10"
+                    android:labelFor="@+id/n_total_de_pacientes"
+                    android:text="@string/n_total_de_pacientes"
+                    android:clickable="true"
+                    android:textAlignment="center"/>
 
                 <com.jjoe64.graphview.GraphView
                     android:id="@+id/graficaPpal"
@@ -204,7 +240,7 @@
                     android:layout_marginTop="21dp"
                     android:visibility="visible"
                     android:onClick="onClickVistaPaciente"
-                    android:contentDescription="Grafica paciente"/>
+                    android:contentDescription="@string/grafica_paciente"/>
             </RelativeLayout>
 
         </com.google.android.material.navigation.NavigationView>
@@ -230,23 +266,6 @@
                 android:layout_alignParentEnd="true">
 
                 <TextView
-                    android:layout_width="154dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_toEndOf="@id/notificaciones"
-                    android:backgroundTint="#FFFFFF"
-                    android:gravity="center_horizontal"
-                    android:shadowColor="@color/white"
-                    android:text="@string/alertas"
-                    android:textColor="#757575"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:onClick="onClickNotificaciones"/>
-
-                <TextView
                     android:id="@+id/notificaciones"
                     android:layout_width="154dp"
                     android:layout_height="wrap_content"
@@ -264,6 +283,47 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:onClick="onClickNotificaciones"/>
+
+                <TextView
+                    android:id="@+id/tvnotificaciones"
+                    android:layout_width="164dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="casual"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/numero1_ppal"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="154dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@id/notificaciones"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="center_horizontal"
+                    android:shadowColor="@color/white"
+                    android:text="@string/alertas"
+                    android:textColor="#757575"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onClickNotificaciones"/>
+
+                <TextView
+                    android:id="@+id/tvalertas"
+                    android:layout_width="164dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="casual"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/numero1_ppal" />
+
             </RelativeLayout>
         </com.google.android.material.navigation.NavigationView>
     </androidx.constraintlayout.widget.ConstraintLayout>
