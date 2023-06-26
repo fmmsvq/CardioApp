@@ -94,6 +94,7 @@
             android:textAlignment="center"
             android:textSize="18sp" />
 
+
     </com.google.android.material.navigation.NavigationView>
 
     <com.google.android.material.navigation.NavigationView
@@ -119,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:visibility="visible" />
+                android:visibility="invisible" />
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/grafica500"
                 android:layout_width="match_parent"

@@ -15,9 +15,7 @@ import java.util.ArrayList;
 public class AdapterListaPacientes extends BaseAdapter {
 
     ArrayList<Paciente> pacientes;
-    //String arrayPacientes[];
     private final Context context;
-    //LayoutInflater inflater;
     public ListaPacientesActivity activity;
 
     public AdapterListaPacientes(Context context, ListaPacientesActivity _activity){
@@ -53,7 +51,6 @@ public class AdapterListaPacientes extends BaseAdapter {
     @Override
     public View getView(int posicion, View convertView, ViewGroup viewGroup) {
         View view = convertView;
-        //Paciente item = getItem(posicion);
         if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.paciente_nav1, null);
         }

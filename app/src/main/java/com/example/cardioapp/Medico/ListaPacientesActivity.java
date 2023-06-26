@@ -3,6 +3,8 @@ package com.example.cardioapp.Medico;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +26,6 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
     private DrawerLayout drawerLayout;
     ArrayList<Paciente> arrayPacientes;
     AdapterListaPacientes adapterListaPacientes;
-    //TextView nombrePaciente, apellidosPaciente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +44,20 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
         }
         adapterListaPacientes = new AdapterListaPacientes(this, this);
         listaPacientes.setAdapter(adapterListaPacientes);
-      //  helper = new PacienteDbAdapter(this);
-
+      //Hacer clikable los elementos de la lista:
+        listaPacientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               // Abrir actividad de la vista de paciente
+                Intent intent = new Intent(ListaPacientesActivity.this, VistaPacienteActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
 
+    /**Lista de pacientes del xml arrays.xml de la ruta res*/
     private ArrayList<Paciente> generaListaPacientes() {
         String[] nombrePacientes = getResources().getStringArray(R.array.paciente_nombre);
         String[] apellidosPaciente = getResources().getStringArray(R.array.paciente_apellidos);
