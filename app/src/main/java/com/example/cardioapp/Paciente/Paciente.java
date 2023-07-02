@@ -21,6 +21,14 @@ public class Paciente implements Serializable { //implementando serializable, po
         this.historiaClinica2 = historiaClinica2;
         this.historiaClinica3 = historiaClinica3;
     }
+
+    public Paciente(String nombre, String apellidos, Integer edad, String historiaClinica, String historiaClinica2) {
+        this.nombrePaciente = nombre;
+        this.apellidosPaciente = apellidos;
+        this.edad = edad;
+        this.historiaClinica = historiaClinica;
+        this.historiaClinica2 = historiaClinica2;
+    }
     public Paciente(String nombre, String apellidos, Integer edad, String historiaClinica) {
         this.nombrePaciente = nombre;
         this.apellidosPaciente = apellidos;
