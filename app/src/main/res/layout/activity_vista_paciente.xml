@@ -94,6 +94,34 @@
             android:textAlignment="center"
             android:textSize="18sp" />
 
+        <TextView
+            android:id="@+id/nombrePaciente"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:text="Paciente" />
+
+        <TextView
+            android:id="@+id/edadPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:paddingRight="20dp"
+            android:text="Edad: " />
+
+        <TextView
+            android:id="@+id/historiaClinica"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="Historia Clinica: " />
+
+        <TextView
+            android:id="@+id/historiaClinica23"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:textSize="9dp"
+            android:paddingTop="40dp"
+            android:text="Otras complicaciones: " />
 
     </com.google.android.material.navigation.NavigationView>
 
@@ -176,7 +204,7 @@
         <com.jjoe64.graphview.GraphView
             android:id="@+id/Fluido"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentTop="true" />
     </com.google.android.material.navigation.NavigationView>
     </androidx.constraintlayout.widget.ConstraintLayout>

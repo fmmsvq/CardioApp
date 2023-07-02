@@ -58,10 +58,12 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
         String[] apellidosPaciente = getResources().getStringArray(R.array.paciente_apellidos);
         String[] edad = getResources().getStringArray(R.array.edad);
         String[] historiaClinica = getResources().getStringArray(R.array.historia_clinica);
+        String[] historiaClinica2 = getResources().getStringArray(R.array.historia_clinica);
+        String[] historiaClinica3 = getResources().getStringArray(R.array.historia_clinica);
         ArrayList<Paciente> list = new ArrayList<>();
 
         for (int i = 0; i < nombrePacientes.length; i++) {
-            list.add(new Paciente(nombrePacientes[i], apellidosPaciente[i], Integer.parseInt(edad[i]), historiaClinica[i]));//Integer.valueOf()
+            list.add(new Paciente(nombrePacientes[i], apellidosPaciente[i], Integer.parseInt(edad[i]), historiaClinica[i], historiaClinica2[i], historiaClinica3[i]));//Integer.valueOf()
         }
         return list;
     }
@@ -107,11 +109,15 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int posicion, long id) {
         Intent intent = new Intent();
-        intent.setClass(this, VistaPacienteActivity.class);
-        intent.putExtra("position", position);
+            intent.setClass(this, VistaPacienteActivity.class);
+        intent.putExtra("position", posicion);
+        Paciente paciente = (Paciente) listaPacientes.getItemAtPosition(posicion);
+        //Implementando serializable en la clase Paciente, podemos pasarlo de la actividad ListaPacientes a VistaPaciente
+        intent.putExtra("paciente", paciente);
         intent.putExtra("id", id);
+
         startActivity(intent);
     }
 }

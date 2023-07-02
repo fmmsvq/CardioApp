@@ -65,4 +65,22 @@
         <item>Arritmias</item>
         <item>Insuficiencia Cardíaca</item>
     </string-array>
+    <string-array name="historia_clinica2">
+        <item>Insuficiencia Cardíaca</item>
+        <item>Hipertensión</item>
+        <item>Arritmias</item>
+        <item>Insuficiencia Cardíaca</item>
+        <item>Hipertensión</item>
+        <item>Arritmias</item>
+        <item>Insuficiencia Cardíaca</item>
+        <item>Hipertensión</item>
+        <item>Arritmias</item>
+        <item>Insuficiencia Cardíaca</item>
+        <item>Hipertensión</item>
+        <item>Arritmias</item>
+
+    </string-array>
+    <string-array name="historia_clinica3">
+
+    </string-array>
 </resources>
