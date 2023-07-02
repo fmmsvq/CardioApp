@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -17,6 +18,8 @@ import com.example.cardioapp.Paciente.Paciente;
 import com.example.cardioapp.R;
 import com.example.cardioapp.bd.PacienteDbAdapter;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -36,6 +39,7 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
         arrayPacientes=generaListaPacientes();
         //AdapterListaPacientes adapterListaPacientes = new AdapterListaPacientes(this, arrayPacientes);
      //Menu
+        cabeceraMenu();
         drawerLayout = findViewById(R.id.drawerlayout2);
         findViewById(R.id.btnmenu2).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
         NavigationView navigationView = findViewById(R.id.menu2);
@@ -46,7 +50,6 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
         listaPacientes.setAdapter(adapterListaPacientes);
       //Hacer clikable los elementos de la lista:
         listaPacientes.setOnItemClickListener(this);
-
     }
 
     /**Lista de pacientes del xml arrays.xml de la ruta res*/
@@ -88,6 +91,19 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
         }
         onBackPressed();//Quitamos menú para que no se muestre al volver
         return item.isChecked();
+    }
+
+    /**Correo del medico en la cabecera del menu*/
+    public void cabeceraMenu(){
+        //Obtenemos una instancia de FirebaseAuth para acceder a los datos de usuario y el propio usuario
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        // Obtenemos el correo electrónico del médico que ha iniciado sesión
+        String email = currentUser.getEmail();
+        NavigationView vistaMenu = findViewById(R.id.menu2);
+        View headerView = vistaMenu.getHeaderView(0);
+        TextView textoCabecera = headerView.findViewById(R.id.correoMedico);
+        textoCabecera.setText(email); // Cambia el texto del encabezado
     }
 
     @Override

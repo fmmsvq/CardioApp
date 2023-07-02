@@ -69,67 +69,7 @@ public class VistaPacienteActivity extends AppCompatActivity implements AdapterV
             }
         }
     }
-    /*private void getDataPointsDeArchivo(String s) {
-        // Lee los datos del archivo y crea un arreglo de DataPoints
-        LineGraphSeries<DataPoint> series1;
-        LineGraphSeries<DataPoint> series2;
-        try {
-            File file = new File(getFilesDir(), "data.txt");
-            BufferedReader reader = new BufferedReader(new FileReader(file));//C:/Users/FATIMA/StudioProjects/CardioApp/app/src/main/res/data.txt"));
-            Path currentRelativePath = Paths.get("");
-            String string = currentRelativePath.toAbsolutePath().toString();
-            Toast.makeText(this,"Path: " +string, Toast.LENGTH_SHORT).show();
 
-            String linea;
-            List<DataPoint> dataPointsX = new ArrayList<>();
-            List<DataPoint> dataPointsR = new ArrayList<>();
-
-            while ((linea = reader.readLine()) != null) {
-                String[] coordenadas = linea.split(","); // Suponiendo que los valores están separados por comas
-                //leemos 100Hz por defecto
-                double t = Double.parseDouble(coordenadas[0]);
-                double r = Double.parseDouble(coordenadas[1]);
-                double x = Double.parseDouble(coordenadas[2]);
-                if(Objects.equals(s, "500")){
-                    t = Double.parseDouble(coordenadas[0]);
-                    r = Double.parseDouble(coordenadas[3]);
-                    x = Double.parseDouble(coordenadas[4]);
-                }else if(Objects.equals(s, "1000")){
-                    t = Double.parseDouble(coordenadas[0]);
-                    r = Double.parseDouble(coordenadas[5]);
-                    x = Double.parseDouble(coordenadas[6]);
-                }else if(Objects.equals(s, "5000")){
-                    t = Double.parseDouble(coordenadas[0]);
-                    r = Double.parseDouble(coordenadas[7]);
-                    x = Double.parseDouble(coordenadas[8]);
-                }else if(Objects.equals(s, "10000")){
-                    t = Double.parseDouble(coordenadas[0]);
-                    r = Double.parseDouble(coordenadas[9]);
-                    x = Double.parseDouble(coordenadas[10]);
-                }else if(Objects.equals(s, "50000")){
-                    t = Double.parseDouble(coordenadas[0]);
-                    r = Double.parseDouble(coordenadas[11]);
-                    x = Double.parseDouble(coordenadas[12]);
-                }
-
-                DataPoint dataPointX = new DataPoint(t, r);
-                DataPoint dataPointR = new DataPoint(t, x);
-                dataPointsX.add(dataPointX);
-                dataPointsR.add(dataPointR);
-
-
-            }
-            series1 = new LineGraphSeries<>(dataPointsX.toArray(new DataPoint[0]));
-            series2 = new LineGraphSeries<>(dataPointsR.toArray(new DataPoint[0]));
-            // Añadimos la lista de puntos al gráfico
-            graphView.addSeries(series1);
-            graphView.addSeries(series2);
-
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
 
     /*Se usa un FrameLayout para que todas las gráficas ocupen el mismo espacio, haremos que
      sea visible solo una según la selección del dropdown. */

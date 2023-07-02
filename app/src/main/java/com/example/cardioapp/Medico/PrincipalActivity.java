@@ -8,8 +8,10 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -20,7 +22,11 @@ import com.example.cardioapp.ConfigActivity;
 import com.example.cardioapp.LoginActivity;
 import com.example.cardioapp.R;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.jjoe64.graphview.GraphView;
+
+import org.w3c.dom.Text;
 
 public class PrincipalActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener{
@@ -36,13 +42,13 @@ public class PrincipalActivity extends AppCompatActivity implements
         graphView  = findViewById(id.graficaPpal);
 
         // Menu lateral
+        cabeceraMenu();
         drawerLayout = findViewById(id.drawerlayout);
         findViewById(id.btnvolver).setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
         NavigationView navigationView = findViewById(id.menu);
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(PrincipalActivity.this);
         }
-
     }
 
     /**Cierre del menú con la pulsación del botón Atrás o back de Android.**/
@@ -134,11 +140,17 @@ public class PrincipalActivity extends AppCompatActivity implements
         super.onPointerCaptureChanged(hasCapture);
     }
 
-    /*private class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
-        }
-    }*/
+    /**Correo del medico en la cabecera del menu*/
+    public void cabeceraMenu(){
+        //Obtenemos una instancia de FirebaseAuth para acceder a los datos de usuario y el propio usuario
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        // Obtenemos el correo electrónico del médico que ha iniciado sesión
+        String email = currentUser.getEmail();
+        NavigationView vistaMenu = findViewById(R.id.menu);
+        View headerView = vistaMenu.getHeaderView(0);
+        TextView textoCabecera = headerView.findViewById(id.correoMedico);
+        textoCabecera.setText(email); // Cambia el texto del encabezado
+    }
 
 }

@@ -14,13 +14,13 @@
         android:scaleType="centerCrop"
         android:src="@drawable/fotocarnet"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/correoMedico"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:riv_oval="true" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/correoMedico"
         android:layout_width="190dp"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
