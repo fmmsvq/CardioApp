@@ -32,7 +32,7 @@ public class VistaPacienteActivity extends AppCompatActivity implements AdapterV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vista_paciente);
         Intent intent = getIntent();
-        String nombre, edad, hC23, hC1;
+        String nombre, edad, hC23 = null, hC1;
 
         paciente = (Paciente) intent.getSerializableExtra("paciente");
 
@@ -44,15 +44,19 @@ public class VistaPacienteActivity extends AppCompatActivity implements AdapterV
         nombre = paciente.getNombrePaciente() + " " + paciente.getApellidosPaciente();
         edad =  edadPaciente.getText() + paciente.getEdad().toString();
         hC1 = historiaCLinica1.getText()+paciente.getHistoriaClinica();
-        if(paciente.getHistoriaClinica3() != null){
+        if(paciente.getHistoriaClinica3() != null&&!paciente.getHistoriaClinica3().equals("")){
             hC23 = historiaClinica23.getText()+paciente.getHistoriaClinica2() + " y " + paciente.getHistoriaClinica3();
-        }else{
+            historiaClinica23.setText(hC23);
+        }else if(paciente.getHistoriaClinica2() != null&&!paciente.getHistoriaClinica2().equals("")){
             hC23 = historiaClinica23.getText()+paciente.getHistoriaClinica2();
+            historiaClinica23.setText(hC23);
+        }else if (paciente.getHistoriaClinica2()==null||paciente.getHistoriaClinica3()==null||paciente.getHistoriaClinica3().equals("")||paciente.getHistoriaClinica2().equals("")){
+            historiaClinica23.setVisibility(View.GONE);
         }
         nombrePaciente.setText(nombre);
         edadPaciente.setText(edad);
         historiaCLinica1.setText(hC1);
-        historiaClinica23.setText(hC23);
+
 
         //inicializamos la grafica 100 Hz por defecto
         graphView = findViewById(R.id.graficaPpal);

@@ -24,7 +24,6 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.ArrayList;
 
 public class ListaPacientesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener{
-    PacienteDbAdapter helper;
     ListView listaPacientes;
     private DrawerLayout drawerLayout;
     ArrayList<Paciente> arrayPacientes;
@@ -58,12 +57,17 @@ public class ListaPacientesActivity extends AppCompatActivity implements Navigat
         String[] apellidosPaciente = getResources().getStringArray(R.array.paciente_apellidos);
         String[] edad = getResources().getStringArray(R.array.edad);
         String[] historiaClinica = getResources().getStringArray(R.array.historia_clinica);
-        String[] historiaClinica2 = getResources().getStringArray(R.array.historia_clinica);
-        String[] historiaClinica3 = getResources().getStringArray(R.array.historia_clinica);
+        String[] historiaClinica2 = getResources().getStringArray(R.array.historia_clinica2);
+        String[] historiaClinica3 = getResources().getStringArray(R.array.historia_clinica3);
         ArrayList<Paciente> list = new ArrayList<>();
 
         for (int i = 0; i < nombrePacientes.length; i++) {
-            list.add(new Paciente(nombrePacientes[i], apellidosPaciente[i], Integer.parseInt(edad[i]), historiaClinica[i], historiaClinica2[i], historiaClinica3[i]));//Integer.valueOf()
+            if(getResources().getStringArray(R.array.historia_clinica3).length==0&&getResources().getStringArray(R.array.historia_clinica2).length==0) {
+                list.add(new Paciente(nombrePacientes[i], apellidosPaciente[i], Integer.parseInt(edad[i]), historiaClinica[i], historiaClinica2[i], historiaClinica3[i]));
+            }else{
+                list.add(new Paciente(nombrePacientes[i], apellidosPaciente[i], Integer.parseInt(edad[i]), historiaClinica[i]));
+
+            }
         }
         return list;
     }
